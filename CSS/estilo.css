@@ -67,6 +67,23 @@ footer {
   border-color: #ff0000;
 }
 
+.carrossel {
+    width: 300px;
+    display: block;   
+    margin: 0 auto;   
+}
+
+.Titulocarrossel {
+
+    text-align: center;
+    margin-top: 10px;
+}
+
+h5 {
+  color: #25364a;
+
+}
+
     .menu-lateral { 
       position: fixed;
       left:-2000px;
