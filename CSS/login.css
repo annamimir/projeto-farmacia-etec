@@ -1,68 +1,112 @@
-
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
 }
 
-header {
-    background-color: #04c9d7;
-    color: rgb(255, 255, 255);
-    text-align: center;
-    padding: 20px;
-}
-
-nav {
-    background-color: #172a36;
-    color: rgb(255, 255, 255);
-    padding: 10px;
-    text-align: center;
-}
-
-nav a {
-    color: rgb(255, 255, 255);
-    margin: 0 15px;
-    text-decoration: none;
-}
-
-main {
-    padding: 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-section {
-    margin-bottom: 20px;
-}
-
-footer {
-    background-color: #25364a;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    position:relative;
+/* Cabeçalho minimalista */
+.top-header {
     width: 100%;
-    bottom: 0;
+    padding: 20px;
+    border-bottom: 1px solid #e5e5e5;
+    display: flex;
+    align-items: center;
 }
 
-.cards {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
+.logo {
+    height: 35px;
+    margin-left: 20px;
 }
 
-.card {
-  background: #ffffff;
-  border: 2px solid #af0000;
-  padding: 20px;
-  border-radius: 8px;
-  width: 250px;
-  transition: transform 0.3s, border 0.3s;
+/* Container do login */
+.login-wrapper {
+    max-width: 380px;
+    margin: 60px auto;
+    text-align: center;
 }
 
-.card:hover {
-  transform: scale(1.05);
-  border-color: #ff0000;
+h2 {
+    font-size: 28px;
+    margin-bottom: 5px;
+    color: #222;
+}
+
+.subtitle {
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    text-align: left;
+    margin-bottom: 18px;
+}
+
+label {
+    font-weight: bold;
+    color: #444;
+    margin-bottom: 6px;
+    display: block;
+}
+
+/* Inputs iguais aos da Drogasil */
+input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #d2d2d2;
+    border-radius: 6px;
+    font-size: 15px;
+    background-color: #f0f0f0;
+    outline: none;
+}
+
+input:focus {
+    border-color: #b30000;
+    background-color: #ffffff;
+}
+
+/* Botão vermelho Drogasil */
+.login-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #b80000;
+    border: none;
+    border-radius: 25px;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.login-btn:hover {
+    background-color: #a30000;
+}
+
+/* Esqueci minha senha */
+.forgot-password {
+    display: block;
+    margin-top: 10px;
+    color: #444;
+    font-size: 14px;
+    text-decoration: underline;
+}
+
+/* Linha divisória */
+.divider {
+    margin: 25px 0;
+    text-align: center;
+    color: #777;
+    position: relative;
+}
+
+/* Cadastro */
+.signup {
+    margin-top: 25px;
+    color: #444;
+}
+
+.signup a {
+    color: #b80000;
+    font-weight: bold;
 }
