@@ -1,4 +1,11 @@
-    <!DOCTYPE html>
+<?php
+    // Inicie a sessão para pegar dados do login
+    session_start();
+
+    // Exemplo: se você salvou "username" na sessão após login
+    $usuario = isset($_SESSION['username']) ? $_SESSION['username'] : "Usuário";
+?>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">

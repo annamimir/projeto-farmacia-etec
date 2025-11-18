@@ -1,6 +1,49 @@
 <?php
-// banco de dados
+session_start();
+
+// 🔗 Conexão com o banco
+$conn = new mysqli("localhost", "root", "", "farmacia");
+
+if ($conn->connect_error) {
+    die("Erro de conexão: " . $conn->connect_error);
+}
+
+$erro = "";
+
+// Quando enviar o formulário
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+    $email = $_POST["email"];
+    $senha = $_POST["password"];
+
+    // Buscar usuário no banco
+    $sql = "SELECT * FROM usuarios WHERE email = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $resultado = $stmt->get_result();
+
+    // Verificar se existe
+    if ($resultado->num_rows === 1) {
+        $usuario = $resultado->fetch_assoc();
+
+        // Verificar senha hash
+        if (password_verify($senha, $usuario["senha"])) {
+            // Login OK → criar sessão
+            $_SESSION["usuario_id"] = $usuario["id"];
+            $_SESSION["usuario_nome"] = $usuario["nome"];
+
+            header("Location: index.php"); // redirecionar para página logada
+            exit;
+        } else {
+            $erro = "Senha incorreta.";
+        }
+    } else {
+        $erro = "E-mail não encontrado.";
+    }
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -19,6 +62,13 @@
 <div class="login-wrapper">
     <h2>Entrar</h2>
     <p class="subtitle">Use seu e-mail e senha para acessar sua conta</p>
+
+    <!-- 🔴 Mensagem de erro -->
+    <?php if ($erro): ?>
+        <p style="color: red; text-align:center; margin-bottom: 10px;">
+            <?= $erro ?>
+        </p>
+    <?php endif; ?>
 
     <form method="POST" action="">
         <div class="form-group">

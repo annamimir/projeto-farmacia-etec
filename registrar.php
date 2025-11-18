@@ -1,6 +1,63 @@
 <?php
-// banco de dados
+session_start();
+
+// 🔗 Conexão com o banco
+$conn = new mysqli("localhost", "root", "", "farmacia");
+
+if ($conn->connect_error) {
+    die("Erro na conexão: " . $conn->connect_error);
+}
+
+$erro = "";
+$sucesso = "";
+
+// 🟦 Quando o formulário for enviado
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+    $nome = trim($_POST["nome"]);
+    $email = trim($_POST["email"]);
+    $senha = $_POST["password"];
+    $confirmar = $_POST["confirmPassword"];
+
+    // 🟦 1 — Verifica se as senhas são iguais
+    if ($senha !== $confirmar) {
+        $erro = "As senhas não coincidem.";
+    } 
+    else {
+
+        // 🟦 2 — Verifica se já existe e-mail no banco
+        $sql = "SELECT id FROM usuarios WHERE email = ?";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $resultado = $stmt->get_result();
+
+        if ($resultado->num_rows > 0) {
+            $erro = "Este e-mail já está cadastrado.";
+        } 
+        else {
+
+            // 🟦 3 — Criptografa a senha
+            $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
+
+            // 🟦 4 — Salvar no banco
+            $insert = "INSERT INTO usuarios (nome, email, senha) VALUES (?, ?, ?)";
+            $stmt2 = $conn->prepare($insert);
+            $stmt2->bind_param("sss", $nome, $email, $senhaHash);
+
+            if ($stmt2->execute()) {
+                $sucesso = "Conta criada com sucesso! Redirecionando...";
+                
+                // Redirecionar após 2 segundos
+                header("refresh:2;url=login.php");
+            } else {
+                $erro = "Erro ao cadastrar. Tente novamente.";
+            }
+        }
+    }
+}
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -19,6 +76,16 @@
 <div class="login-wrapper">
     <h2>Criar conta</h2>
     <p class="subtitle">Preencha suas informações para continuar</p>
+
+    <!-- 🔴 Mensagem de erro -->
+    <?php if ($erro): ?>
+        <p style="color: red; text-align:center; margin-bottom: 10px;"><?= $erro ?></p>
+    <?php endif; ?>
+
+    <!-- 🟢 Mensagem de sucesso -->
+    <?php if ($sucesso): ?>
+        <p style="color: green; text-align:center; margin-bottom: 10px;"><?= $sucesso ?></p>
+    <?php endif; ?>
 
     <form method="POST" action="">
         
