@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
     <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -19,31 +11,21 @@
 </head>
 <body>
     <header>
-        <h1>Farmacia nome</h1><br>
-        <p>>> tem que por negocio de pesquisar aqui talvez <<</p>
-            <input type="checkbox" name="menu" id="check">
-    <label for="check" class="botao">&#9776;</label>
-    <nav class="menu-lateral">
-  <ul>
-      <li><input type="checkbox" name="menu" id="check">
-      <label for="check" class="botao">&#10006;</label></li>
-      <li><a href="Medicamentos.html"> Medicamentos </a></li>
-      <li><a href="Beleza.html"> Beleza </a></li>
-      <li><a href="Promoções.html"> Promoções </a></li>
-      <li><a href="ClubeDePontos.html">Clube de Pontos</a></li>
+        <h1>Asclephium</h1><br>
+        <input type="text" placeholder="Pesquisar produtos..." class="form-control w-75 mx-auto">
     </header>
     <nav>
-        <a href="#promocoes">promoçoes</a>
-        <a href="#produtos">produtos</a>
-        <a href="#servicos">serviços</a>
-        <a href="#contato">contato</a>
+        <a href="promocoes.php">Promoções</a>
+        <a href="produtos.php">Produtos</a>
+        <a href="serviços.php">Serviços</a>
+        <a href="contato.php">Contato</a>
     </nav>
     <main>
         <section id="promocoes">
             <h2>promocoes</h2>
             <div class="cards">
       <div class="card">
-        <a href="link aqui">fralda de bebe</a>
+        <a href="modelpagprod.php">fralda de bebe</a>
         <br><br>
       </div>
       <div class="card">
@@ -56,7 +38,8 @@
     </div>
         </section>
         
-        <!-- Carrossel Bootstrap -->
+        <!-- Carrossel -->
+
         <section id="carrossel">
             <h2>Destaques da Semana</h2>
             <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
@@ -118,15 +101,13 @@
                 <li>Vacinação</li>
             </ul>
         </section>
-        <section id="contato">
-            <h2>Contato</h2>
-            <p>Endereço: Rua da Saúde, 123, Centro, Cidade - Estado</p>
-            <p>Telefone: (11) 1234-5678</p>
-            <p>Email: contato@farmaciasaude.com</p>
-        </section>
     </main>
     <footer>
         <p>&copy; 2023 Farmácia Saúde & Bem-Estar. Todos os direitos reservados.</p>
+        <h2>Contato</h2>
+            <p>Endereço: Rua da Saúde, 123, Centro, Cidade - Estado</p>
+            <p>Telefone: (11) 1234-5678</p>
+            <p>Email: contato@farmaciasaude.com</p>
     </footer>
     
     <!-- Bootstrap JS -->
