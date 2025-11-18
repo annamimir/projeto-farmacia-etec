@@ -37,20 +37,20 @@
 
         <!-- INFORMAÇÕES DO PRODUTO -->
         <div class="col-md-7">
-            <h2>Cimegripe - 20 Cápsulas</h2>
+    <h2>Resfenol – 20 Cápsulas</h2>
 
-            <p class="preco">R$ 14,99</p>
+    <p class="preco">R$ 12,90</p>
 
-            <p>
-                O Cimegripe é indicado para o alívio dos sintomas da gripe e resfriado,
-                como dor de cabeça, febre, dor no corpo, dor de garganta e congestão nasal.
-            </p>
+    <p>
+    O Resfenol é indicado para o alívio rápido dos sintomas da gripe e resfriado,
+    como febre, dor de cabeça, mal-estar, congestão nasal e coriza.
+    Sua fórmula combina analgésico, descongestionante e antialérgico.
+    </p>
 
-            <ul>
-                <li>Marca: Cimed</li>
-                <li>Categoria: Antigripais</li>
-                <li>Disponível na loja e para entrega</li>
-            </ul>
+    <ul>
+    <li>Marca: Kley Hertz</li>
+    <li>Categoria: Antigripais</li>
+    </ul>
 
             <button class="btn btn-success btn-lg mt-3">Adicionar ao Carrinho</button>
         </div>

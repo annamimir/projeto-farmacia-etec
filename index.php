@@ -57,7 +57,7 @@
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="IMG/Cimegripe.png" class="carrossel" alt="Medicamentos em Oferta">
+                        <a href="cimegripe.php"><img src="IMG/Cimegripe.png" class="carrossel" alt="Medicamentos em Oferta"></a>
                         
                         <div class="Titulocarrossel">
                             <h5>Medicamentos em Oferta</h5>
