@@ -32,25 +32,25 @@
 
         <!-- IMAGEM DO PRODUTO -->
         <div class="col-md-5 text-center">
-            <img src="IMG/Cimegripe.png" alt="Nome do Produto" class="produto-img">
+            <img src="IMG/Naldecon.png" alt="Nome do Produto" class="produto-img">
         </div>
 
         <!-- INFORMAÇÕES DO PRODUTO -->
         <div class="col-md-7">
-            <h2>Cimegripe - 20 Cápsulas</h2>
+      <h2>Naldecon Dia – 20 Comprimidos</h2>
 
-            <p class="preco">R$ 14,99</p>
+    <p class="preco">R$ 19,90</p>
 
-            <p>
-                O Cimegripe é indicado para o alívio dos sintomas da gripe e resfriado,
-                como dor de cabeça, febre, dor no corpo, dor de garganta e congestão nasal.
-            </p>
+    <p>
+    O Naldecon Dia é indicado para o alívio dos sintomas da gripe durante o dia,
+    proporcionando ação descongestionante e analgésica sem causar sonolência.
+    Reduz febre, dor de cabeça, dor no corpo e congestão nasal.
+    </p>
 
-            <ul>
-                <li>Marca: Cimed</li>
-                <li>Categoria: Antigripais</li>
-                <li>Disponível na loja e para entrega</li>
-            </ul>
+    <ul>
+    <li>Marca: EMS</li>
+    <li>Categoria: Antigripais</li>
+    </ul>
 
             <button class="btn btn-success btn-lg mt-3">Adicionar ao Carrinho</button>
         </div>
@@ -68,10 +68,10 @@
 
             <div class="ProdRel">
                 <div class="card-prod">
-                    <img src="IMG/Naldecon.png" class="img-fluid" alt="">
-                    <h6 class="mt-2">Naldecon Dia – 20 Comprimidos</h6>
-                    <p class="preco">R$ 19,90</p>
-                    <a href="Naldecon.php" class="btn btn-outline-success w-100">Ver Produto</a>
+                    <img src="IMG/cimegripe.png" class="img-fluid" alt="">
+                    <h6 class="mt-2">Cimegripe</h6>
+                    <p class="preco">R$ 14,99</p>
+                    <a href="cimegripe.php" class="btn btn-outline-success w-100">Ver Produto</a>
                 </div>
             </div>
 

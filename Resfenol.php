@@ -32,7 +32,7 @@
 
         <!-- IMAGEM DO PRODUTO -->
         <div class="col-md-5 text-center">
-            <img src="IMG/Cimegripe.png" alt="Nome do Produto" class="produto-img">
+            <img src="IMG/Resfenol.png" alt="Nome do Produto" class="produto-img">
         </div>
 
         <!-- INFORMAÇÕES DO PRODUTO -->
@@ -86,9 +86,9 @@
 
             <div class="ProdRel">
                 <div class="card-prod">
-                    <img src="IMG/Resfenol.png" class="img-fluid" alt="">
-                    <h6 class="mt-2">Resfenol – 20 Cápsulas</h6>
-                    <p class="preco">R$ 12,90</p>
+                    <img src="IMG/Cimegripe.png" class="img-fluid" alt="">
+                    <h6 class="mt-2">Cimegripe – 20 Cápsulas</h6>
+                    <p class="preco">R$ 14,99</p>
                     <a href="Resfenol.php" class="btn btn-outline-success w-100">Ver Produto</a>
                 </div>
             </div>

@@ -32,25 +32,25 @@
 
         <!-- IMAGEM DO PRODUTO -->
         <div class="col-md-5 text-center">
-            <img src="IMG/Cimegripe.png" alt="Nome do Produto" class="produto-img">
+            <img src="IMG/Benegrip.png" alt="Nome do Produto" class="produto-img">
         </div>
 
         <!-- INFORMAÇÕES DO PRODUTO -->
         <div class="col-md-7">
-            <h2>Cimegripe - 20 Cápsulas</h2>
+         <h2>Benegripe Multi – 12 Cápsulas</h2>
 
-            <p class="preco">R$ 14,99</p>
+        <p class="preco">R$ 16,50</p>
 
-            <p>
-                O Cimegripe é indicado para o alívio dos sintomas da gripe e resfriado,
-                como dor de cabeça, febre, dor no corpo, dor de garganta e congestão nasal.
-            </p>
+    <p>
+    O Benegripe Multi é indicado para o alívio dos sintomas da gripe, oferecendo ação
+    analgésica e descongestionante. Auxilia na redução da febre, dores musculares,
+    congestão nasal e mal-estar gripal.
+    </p>
 
-            <ul>
-                <li>Marca: Cimed</li>
-                <li>Categoria: Antigripais</li>
-                <li>Disponível na loja e para entrega</li>
-            </ul>
+    <ul>
+    <li>Marca: Hypera Pharma</li>
+    <li>Categoria: Antigripais</li>
+    </ul>
 
             <button class="btn btn-success btn-lg mt-3">Adicionar ao Carrinho</button>
         </div>
@@ -77,10 +77,10 @@
 
             <div class="ProdRel">
                 <div class="card-prod">
-                    <img src="IMG/Benegrip.png" class="img-fluid" alt="">
-                    <h6 class="mt-2">Benegripe Multi – 12 Cápsulas</h6>
-                    <p class="preco">R$ 16,50</p>
-                    <a href="Benegripe.php" class="btn btn-outline-success w-100">Ver Produto</a>
+                    <img src="IMG/Cimegripe.png" class="img-fluid" alt="">
+                    <h6 class="mt-2">Cimegripe – 12 Cápsulas</h6>
+                    <p class="preco">R$ 14,99</p>
+                    <a href="Cimegripe.php" class="btn btn-outline-success w-100">Ver Produto</a>
                 </div>
             </div>
 

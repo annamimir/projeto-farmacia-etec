@@ -32,25 +32,25 @@
 
         <!-- IMAGEM DO PRODUTO -->
         <div class="col-md-5 text-center">
-            <img src="IMG/Cimegripe.png" alt="Nome do Produto" class="produto-img">
+            <img src="IMG/paracetamol 500mg.png" alt="Nome do Produto" class="produto-img">
         </div>
 
         <!-- INFORMAÇÕES DO PRODUTO -->
         <div class="col-md-7">
-            <h2>Cimegripe - 20 Cápsulas</h2>
+      <h2>Paracetamol – 500 mg</h2>
 
-            <p class="preco">R$ 14,99</p>
+    <p class="preco">R$ 8,99</p>
 
-            <p>
-                O Cimegripe é indicado para o alívio dos sintomas da gripe e resfriado,
-                como dor de cabeça, febre, dor no corpo, dor de garganta e congestão nasal.
-            </p>
+    <p>
+    O Paracetamol é um analgésico e antitérmico indicado para o alívio de dores leves
+    a moderadas, como dor de cabeça, dor no corpo e febre associada a gripes e resfriados.
+    É uma das opções mais seguras e recomendadas para baixar a febre.
+    </p>
 
-            <ul>
-                <li>Marca: Cimed</li>
-                <li>Categoria: Antigripais</li>
-                <li>Disponível na loja e para entrega</li>
-            </ul>
+    <ul>
+    <li>Marca: Diversas (Genérico)</li>
+    <li>Categoria: Analgésicos e Antitérmicos</li>
+    </ul>
 
             <button class="btn btn-success btn-lg mt-3">Adicionar ao Carrinho</button>
         </div>
@@ -95,10 +95,10 @@
 
             <div class="ProdRel">
                 <div class="card-prod">
-                    <img src="IMG/Paracetamol 500mg.png" class="img-fluid" alt="">
-                    <h6 class="mt-2">Paracetamol 500mg - 20 Comprimidos</h6>
-                    <p class="preco">R$ 8,99</p>
-                    <a href="Paracetamol.php" class="btn btn-outline-success w-100">Ver Produto</a>
+                    <img src="IMG/Cimegripe.png" class="img-fluid" alt="">
+                    <h6 class="mt-2">Cimegripe - 20 Cápsulas</h6>
+                    <p class="preco">R$ 14,99</p>
+                    <a href="Cimegripe.php" class="btn btn-outline-success w-100">Ver Produto</a>
                 </div>
             </div>
 
