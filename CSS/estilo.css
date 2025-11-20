@@ -124,6 +124,21 @@ body {
     text-decoration: none;
 }
 
+/* BOTÃO DE FECHAR MENU */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 26px;
+    cursor: pointer;
+    padding: 5px;
+    user-select: none;
+}
+.close-btn:hover {
+    color: #ffdddd;
+}
+
 /* CARDS */
 .cards {
   display: flex;

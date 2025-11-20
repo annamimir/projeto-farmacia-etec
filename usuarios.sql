@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 18/11/2025 às 23:10
+-- Tempo de geração: 20/11/2025 às 19:38
 -- Versão do servidor: 9.1.0
 -- Versão do PHP: 8.3.14
 
@@ -33,6 +33,11 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `nome` varchar(100) NOT NULL,
   `email` varchar(150) NOT NULL,
   `senha` varchar(255) NOT NULL,
+  `sobrenome` varchar(100) DEFAULT NULL,
+  `telefone` varchar(20) DEFAULT NULL,
+  `cpf` varchar(14) DEFAULT NULL,
+  `nascimento` date DEFAULT NULL,
+  `genero` varchar(20) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
 ) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
@@ -41,8 +46,8 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 -- Despejando dados para a tabela `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`) VALUES
-(1, 'pedroca', 'pedrinho@gmail.com', '$2y$10$UHdcKvH6tVPbjOqzD6xd7ukifL6uPM2bgMbqegmNqqiry9mYXbf6i');
+INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `sobrenome`, `telefone`, `cpf`, `nascimento`, `genero`) VALUES
+(1, 'pedroca', 'pedrinho@gmail.com', '$2y$10$UHdcKvH6tVPbjOqzD6xd7ukifL6uPM2bgMbqegmNqqiry9mYXbf6i', NULL, NULL, NULL, NULL, NULL);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

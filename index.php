@@ -53,11 +53,15 @@ $logado = (bool)$usuario;
 
 <!-- MENU LATERAL -->
 <nav class="side-menu">
+    <!-- Botão de fechar -->
+    <label for="menu-toggle" class="close-btn">✖</label>
+
     <a href="promocoes.php">Promoções</a>
     <a href="produtos.php">Produtos</a>
     <a href="servicos.php">Serviços</a>
     <a href="contato.php">Contato</a>
 </nav>
+
 
 <!-- NAV abaixo do header -->
 <nav class="top-nav">
