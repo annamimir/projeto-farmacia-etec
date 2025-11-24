@@ -9,7 +9,7 @@ body {
 /* HEADER EM DUAS LINHAS */
 .header {
     width: 100%;
-    background: #0a6569;
+    background: #072c48;
     padding: 10px 20px;
     display: flex;
     flex-direction: column; /* DUAS LINHAS */
@@ -91,7 +91,7 @@ body {
     top: 0;
     width: 250px;
     height: 100%;
-    background: #1d5561;
+    background: #60c2ff;
     padding-top: 80px;
     display: flex;
     flex-direction: column;
@@ -112,7 +112,7 @@ body {
 
 /* NAV ESCURO */
 .top-nav {
-    background-color: #172a36;
+    background-color: #4abaff;
     padding: 10px;
     text-align: center;
 }
@@ -121,6 +121,11 @@ body {
     margin: 0 15px;
     text-decoration: none;
 }
+.top-nav a:hover {
+     transform: scale(1.05);
+  border-color: #cea06e;
+}
+
 
 /* BOTÃO DE FECHAR MENU */
 .close-btn {
@@ -145,7 +150,7 @@ body {
 }
 .card {
   background: #fff;
-  border: 2px solid #af0000;
+  border: 2px solid #c3baaa;
   padding: 20px;
   width: 250px;
   border-radius: 8px;
@@ -158,7 +163,7 @@ body {
 }
 .card:hover {
   transform: scale(1.05);
-  border-color: #ff0000;
+  border-color: #cea06e;
 }
 
 /* FOOTER */
