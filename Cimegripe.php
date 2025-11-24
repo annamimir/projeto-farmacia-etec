@@ -90,7 +90,38 @@
                 <li>Disponível na loja e para entrega</li>
             </ul>
 
-            <button class="btn btn-success btn-lg mt-3">Adicionar ao Carrinho</button>
+    <button class="add-carrinho"
+    data-id="1"
+    data-name="Cimegripe"
+    data-preco="14.99">
+    Adicionar ao carrinho
+    </button>
+    <script> 
+    document.querySelectorAll(".add-carrinho").forEach(btn => {
+    btn.addEventListener("click", () => {
+        const produto = {
+            id: btn.dataset.id,
+            name: btn.dataset.name,
+            price: parseFloat(btn.dataset.preco),
+            qty: 1
+        };
+
+        let cart = JSON.parse(localStorage.getItem("carrinho")) || [];
+
+        const existing = cart.find(item => item.id === produto.id);
+
+        if (existing) {
+            existing.qty++;
+        } else {
+            cart.push(produto);
+        }
+
+        localStorage.setItem("carrinho", JSON.stringify(cart));
+        alert("Produto adicionado ao carrinho!");
+    });
+});
+</script>
+
         </div>
     </div>
 
