@@ -75,7 +75,8 @@ $logado = (bool)$usuario;
         <h2>promocoes</h2>
         <div class="cards">
             <div class="card">
-                <a href="modelpagprod.php">fralda de bebe</a><br><br>
+                <a href="Cimegripe.php"><img src="img/cimegripe.png" alt="Promoções"><br><br>
+                <h2 class="promocao">R$ 8.99</h2>
             </div>
             <div class="card">
                 <a href="#">fralda de velhos</a><br><br>
