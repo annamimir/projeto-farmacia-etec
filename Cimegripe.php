@@ -18,7 +18,7 @@
     <div class="header-top">
         <label for="menu-toggle" class="menu-icon">☰</label>
 
-      <img src="IMG/logo farmacia-1.png"  class="logo" alt="">
+      <a href="index.php"><img src="IMG/logo farmacia-1.png"  class="logo" alt=""></a>
 
         <div class="user-area">
             <img src="IMG/usuario.png" class="avatar" id="avatarBtn">
@@ -41,7 +41,9 @@
         <?php endif; ?>
 
     </div>
-
+            <div class="carrinho-fixo">
+            <a href="Carrinho.php"><img src="img/carrinho.png" alt=""  class="icone-carrinho" ></a>
+        </div>
 </header>   
 
 <nav class="side-menu">
@@ -93,35 +95,10 @@
     <button class="add-carrinho"
     data-id="1"
     data-name="Cimegripe"
-    data-preco="14.99">
+    data-preco="14.99"
+    data-img="IMG/Cimegripe.png">
     Adicionar ao carrinho
     </button>
-    <script> 
-    document.querySelectorAll(".add-carrinho").forEach(btn => {
-    btn.addEventListener("click", () => {
-        const produto = {
-            id: btn.dataset.id,
-            name: btn.dataset.name,
-            price: parseFloat(btn.dataset.preco),
-            qty: 1
-        };
-
-        let cart = JSON.parse(localStorage.getItem("carrinho")) || [];
-
-        const existing = cart.find(item => item.id === produto.id);
-
-        if (existing) {
-            existing.qty++;
-        } else {
-            cart.push(produto);
-        }
-
-        localStorage.setItem("carrinho", JSON.stringify(cart));
-        alert("Produto adicionado ao carrinho!");
-    });
-});
-</script>
-
         </div>
     </div>
 
@@ -179,6 +156,44 @@
 <footer class="text-center mt-5 p-3 bg-light">
     <p> 2025 Asclephium.</p>
 </footer>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    // Quando clicar no botão
+    document.querySelector(".add-carrinho").addEventListener("click", function () {
+
+        // 1️⃣ PEGAR DADOS DO PRODUTO
+        const nome   = this.dataset.name;
+        const preco  = parseFloat(this.dataset.preco);
+        const imagem = this.dataset.img;
+
+        // 2️⃣ PUXAR CARRINHO ATUAL OU CRIAR UM NOVO
+        let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+
+        // 3️⃣ VERIFICAR SE O PRODUTO JÁ ESTÁ NO CARRINHO
+        let itemExistente = carrinho.find(item => item.nome === nome);
+
+        if (itemExistente) {
+            itemExistente.quantidade++;
+            itemExistente.subtotal = itemExistente.quantidade * itemExistente.preco;
+        } else {
+            carrinho.push({
+                nome: nome,
+                preco: preco,
+                quantidade: 1,
+                imagem: imagem,
+                subtotal: preco
+            });
+        }
+
+        // 4️⃣ SALVAR
+        localStorage.setItem("carrinho", JSON.stringify(carrinho));
+
+        alert("Produto adicionado ao carrinho!");
+    });
+
+});
+</script>
 
 </body>
 </html>

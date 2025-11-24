@@ -146,7 +146,7 @@ body {
     background: #094f53;
 }
 
-/* RESPONSIVO */
+
 @media(max-width: 850px) {
     .conteudo-carrinho {
         grid-template-columns: 1fr;
@@ -154,3 +154,19 @@ body {
 }
 
 
+.img-produto {
+    width: 80px;       /* largura */
+    height: 80px;      /* altura */
+    object-fit: contain; 
+    border-radius: 8px;
+}
+
+.item-carrinho {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    background: #fff;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}

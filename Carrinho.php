@@ -24,12 +24,11 @@
 
     <h2 class="titulo-carrinho">Seu Carrinho</h2>
 
-    <!-- LISTA DOS PRODUTOS ADICIONADOS -->
     <div id="lista-carrinho" class="lista-carrinho">
-        <!-- Produtos aparecerão aqui pelo JS -->
+        
+    <img src="${item.imagem}" class="img-produto">
     </div>
-
-    <!-- RESUMO FINAL -->
+   
     <aside class="resumo-carrinho">
         <h3>Resumo</h3>
 

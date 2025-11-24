@@ -210,3 +210,21 @@ height: 350px;
     border-radius: 8px;
     padding: 15px;
 }
+
+.icone-carrinho {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.carrinho-fixo {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #0a6569;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 9999; /* garante que fica acima de tudo */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+}
