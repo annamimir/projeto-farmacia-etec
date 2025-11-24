@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produto | Farmácia</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="CSS/estilo.css">
+    <link rel="stylesheet" href="CSS/produto.css">
 
     <style>
     </style>
@@ -13,16 +13,54 @@
 
 <body>
 
-<header>
-    <a href="index.php"> <h1>Asclephium</h1></a>
-    <input type="text" placeholder="Pesquisar produtos..." class="form-control w-75 mx-auto">
-</header>
-<nav>
-        <a href="#promocoes">promoçoes</a>
-        <a href="#produtos">produtos</a>
-        <a href="#servicos">serviços</a>
-        <a href="#contato">contato</a>
-    </nav>
+<header class="header">
+
+    <div class="header-top">
+        <label for="menu-toggle" class="menu-icon">☰</label>
+
+      <img src="IMG/logo farmacia-1.png"  class="logo" alt="">
+
+        <div class="user-area">
+            <img src="IMG/usuario.png" class="avatar" id="avatarBtn">
+        </div>
+    </div>
+
+    <div class="search-box">
+        <input type="text" placeholder="Pesquisar produtos...">
+    </div>
+
+
+    <div class="user-dropdown" id="userDropdown">
+
+        <?php if ($logado): ?>
+            <p style="padding: 12px 15px; font-weight:bold;">Olá, <?= htmlspecialchars($nomeExibicao) ?></p>
+            <a href="editar_perfil.php">Editar Perfil</a>
+            <a href="logout.php">Logout</a>
+        <?php else: ?>
+            <a href="login.php">Login</a>
+        <?php endif; ?>
+
+    </div>
+
+</header>   
+
+<nav class="side-menu">
+
+    <label for="menu-toggle" class="close-btn">✖</label>
+
+    <a href="promocoes.php">Promoções</a>
+    <a href="produtos.php">Produtos</a>
+    <a href="servicos.php">Serviços</a>
+    <a href="contato.php">Contato</a>
+</nav>
+
+
+<nav class="top-nav">
+    <a href="promocoes.php">Promoções</a>
+    <a href="produtos.php">Produtos</a>
+    <a href="servicos.php">Serviços teste</a>
+    <a href="contato.php">Contato</a>
+</nav>
 <main class="container mt-5">
 
     <!-- ==============================
@@ -64,7 +102,7 @@
     <section>
         <h3>Produtos Relacionados</h3>
 
-         <div class="row mt-4">
+         <div class="esteira-4">
 
             <div class="ProdRel">
                 <div class="card-prod">
