@@ -25,7 +25,7 @@ $logado = (bool)$usuario;
     <div class="header-top">
         <label for="menu-toggle" class="menu-icon">☰</label>
 
-      <img src="IMG/logo farmacia-1.png"  class="logo" alt="">
+        <img src="IMG/logo farmacia-1.png"  class="logo" alt="">
 
         <div class="user-area">
             <img src="IMG/usuario.png" class="avatar" id="avatarBtn">
@@ -36,9 +36,7 @@ $logado = (bool)$usuario;
         <input type="text" placeholder="Pesquisar produtos...">
     </div>
 
-
     <div class="user-dropdown" id="userDropdown">
-
         <?php if ($logado): ?>
             <p style="padding: 12px 15px; font-weight:bold;">Olá, <?= htmlspecialchars($nomeExibicao) ?></p>
             <a href="editar_perfil.php">Editar Perfil</a>
@@ -46,14 +44,12 @@ $logado = (bool)$usuario;
         <?php else: ?>
             <a href="login.php">Login</a>
         <?php endif; ?>
-
     </div>
 
 </header>   
 
-
+<!-- MENU LATERAL -->
 <nav class="side-menu">
-
     <label for="menu-toggle" class="close-btn">✖</label>
 
     <a href="promocoes.php">Promoções</a>
@@ -62,7 +58,7 @@ $logado = (bool)$usuario;
     <a href="contato.php">Contato</a>
 </nav>
 
-
+<!-- NAV abaixo do header -->
 <nav class="top-nav">
     <a href="promocoes.php">Promoções</a>
     <a href="produtos.php">Produtos</a>
@@ -71,8 +67,9 @@ $logado = (bool)$usuario;
 </nav>
 
 <main>
+
     <section id="promocoes">
-        <h2>promocoes</h2>
+        <h2>Promoções</h2>
         <div class="cards">
             <div class="card">
                 <a href="Cimegripe.php"><img src="img/cimegripe.png" alt="Promoções"><br><br>
@@ -84,12 +81,52 @@ $logado = (bool)$usuario;
         </div>
     </section>
 
-    <section id="carrossel">
-        <h2>Destaques da Semana</h2>
+    <!--        CARROSSEL AQUI           -->
+
+    <section id="carrossel" class="my-4">
+        <h2 class="text-center mb-3">Destaques da Semana</h2>
+
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-    
+
+            <!-- Indicadores -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></button>
+            </div>
+
+            <!-- Imagens do carrossel -->
+            <div class="carousel-inner">
+
+                <div class="carousel-item active">
+                    <img src="IMG/banner1.jpg" class="d-block w-100" style="max-height:350px; object-fit:cover;">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="IMG/banner2.jpg" class="d-block w-100" style="max-height:350px; object-fit:cover;">
+                </div>
+
+                <div class="carousel-item">
+                    <img src="IMG/banner3.jpg" class="d-block w-100" style="max-height:350px; object-fit:cover;">
+                </div>
+
+            </div>
+
+            <!-- Controles -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+
         </div>
     </section>
+
+    <!-- =============================== -->
+    <!--        FIM DO CARROSSEL         -->
+    <!-- =============================== -->
 
     <section id="produtos">
         <h2>Produtos em Destaque</h2>
@@ -110,6 +147,7 @@ $logado = (bool)$usuario;
             <li>Vacinação</li>
         </ul>
     </section>
+
 </main>
 
 <footer>
