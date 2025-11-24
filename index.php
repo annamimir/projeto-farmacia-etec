@@ -81,52 +81,51 @@ $logado = (bool)$usuario;
         </div>
     </section>
 
-    <!--        CARROSSEL AQUI           -->
+<!--        CARROSSEL AQUI           -->
 
-    <section id="carrossel" class="my-4">
-        <h2 class="text-center mb-3">Destaques da Semana</h2>
+<section id="carrossel" class="my-4">
+    <h2 class="text-center mb-3">Destaques da Semana</h2>
 
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
 
-            <!-- Indicadores -->
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></button>
+        <!-- Indicadores -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></button>
+        </div>
+
+        <!-- Imagens -->
+        <div class="carousel-inner">
+
+            <div class="carousel-item active">
+                <img src="IMG/carrossel_imagem1.jpg" class="d-block mx-auto rounded-slide" alt="Imagem 1">
             </div>
 
-            <!-- Imagens do carrossel -->
-            <div class="carousel-inner">
-
-                <div class="carousel-item active">
-                    <img src="IMG/banner1.jpg" class="d-block w-100" style="max-height:350px; object-fit:cover;">
-                </div>
-
-                <div class="carousel-item">
-                    <img src="IMG/banner2.jpg" class="d-block w-100" style="max-height:350px; object-fit:cover;">
-                </div>
-
-                <div class="carousel-item">
-                    <img src="IMG/banner3.jpg" class="d-block w-100" style="max-height:350px; object-fit:cover;">
-                </div>
-
+            <div class="carousel-item">
+                <img src="IMG/banner2.jpg" class="d-block mx-auto rounded-slide" alt="Imagem 2">
             </div>
 
-            <!-- Controles -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </button>
-
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </button>
+            <div class="carousel-item">
+                <img src="IMG/banner3.jpg" class="d-block mx-auto rounded-slide" alt="Imagem 3">
+            </div>
 
         </div>
-    </section>
 
-    <!-- =============================== -->
-    <!--        FIM DO CARROSSEL         -->
-    <!-- =============================== -->
+        <!-- Controles -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+
+    </div>
+</section>
+
+<!--        FIM DO CARROSSEL         -->
+
 
     <section id="produtos">
         <h2>Produtos em Destaque</h2>
