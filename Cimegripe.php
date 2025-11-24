@@ -13,12 +13,15 @@
 
 <body>
 
+<!--checkmenu lateral -->
+<input type="checkbox" id="menu-toggle" style="display:none">
+
 <header class="header">
 
     <div class="header-top">
         <label for="menu-toggle" class="menu-icon">☰</label>
 
-      <img src="IMG/logo farmacia-1.png"  class="logo" alt="">
+        <img src="IMG/logo farmacia-1.png"  class="logo" alt="">
 
         <div class="user-area">
             <img src="IMG/usuario.png" class="avatar" id="avatarBtn">
@@ -29,9 +32,7 @@
         <input type="text" placeholder="Pesquisar produtos...">
     </div>
 
-
     <div class="user-dropdown" id="userDropdown">
-
         <?php if ($logado): ?>
             <p style="padding: 12px 15px; font-weight:bold;">Olá, <?= htmlspecialchars($nomeExibicao) ?></p>
             <a href="editar_perfil.php">Editar Perfil</a>
@@ -39,13 +40,12 @@
         <?php else: ?>
             <a href="login.php">Login</a>
         <?php endif; ?>
-
     </div>
 
 </header>   
 
+<!-- MENU LATERAL -->
 <nav class="side-menu">
-
     <label for="menu-toggle" class="close-btn">✖</label>
 
     <a href="promocoes.php">Promoções</a>
@@ -54,7 +54,7 @@
     <a href="contato.php">Contato</a>
 </nav>
 
-
+<!-- NAV abaixo do header -->
 <nav class="top-nav">
     <a href="promocoes.php">Promoções</a>
     <a href="produtos.php">Produtos</a>
@@ -116,8 +116,8 @@
             <div class="ProdRel">
                 <div class="card-prod">
                     <img src="IMG/Benegrip.png" class="img-fluid" alt="">
-                    <h6 class="mt-2">Benegripe Multi – 12 Cápsulas</h6>
-                    <p class="preco">R$ 16,50</p>
+                    <h6 class="mt-2">Benegripe Multi – Solução Oral</h6>
+                    <p class="preco">R$ 35,24</p>
                     <a href="Benegripe.php" class="btn btn-outline-success w-100">Ver Produto</a>
                 </div>
             </div>
@@ -144,9 +144,13 @@
     </section>
 
 </main>
-
-<footer class="text-center mt-5 p-3 bg-light">
-    <p> 2025 Asclephium.</p>
+<br><br><br><br>
+<footer>
+    <p>&copy; <?= date('Y') ?> Farmácia Saúde & Bem-Estar. Todos os direitos reservados.</p>
+    <h2>Contato</h2>
+    <p>Endereço: Rua da Saúde, 123, Centro, Cidade - Estado</p>
+    <p>Telefone: (11) 1234-5678</p>
+    <p>Email: contato@farmaciasaude.com</p>
 </footer>
 
 </body>

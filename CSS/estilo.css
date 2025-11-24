@@ -123,10 +123,6 @@ body {
     margin: 0 15px;
     text-decoration: none;
 }
-.top-nav a:hover {
-     transform: scale(1.05);
-  border-color: #cea06e;
-}
 
 
 /* BOTÃO DE FECHAR MENU */
@@ -172,7 +168,7 @@ body {
 
 /* FOOTER */
 footer {
-    background-color: #25364a;
+    background-color: #072c48;
     color: white;
     text-align: center;
     padding: 20px 10px;
@@ -186,7 +182,7 @@ height: 200px;
 
 }
 .promocao {
-    color: #0a6569;
+    color: #4abaff;
     font-size: 20px;
     font-weight: bold;
 

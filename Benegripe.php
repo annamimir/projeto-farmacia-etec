@@ -13,16 +13,54 @@
 
 <body>
 
-<header>
-    <a href="index.php"> <h1>Asclephium</h1></a>
-    <input type="text" placeholder="Pesquisar produtos..." class="form-control w-75 mx-auto">
-</header>
-<nav>
-        <a href="#promocoes">promoçoes</a>
-        <a href="#produtos">produtos</a>
-        <a href="#servicos">serviços</a>
-        <a href="#contato">contato</a>
-    </nav>
+<!--checkmenu lateral -->
+<input type="checkbox" id="menu-toggle" style="display:none">
+
+<header class="header">
+
+    <div class="header-top">
+        <label for="menu-toggle" class="menu-icon">☰</label>
+
+        <img src="IMG/logo farmacia-1.png"  class="logo" alt="">
+
+        <div class="user-area">
+            <img src="IMG/usuario.png" class="avatar" id="avatarBtn">
+        </div>
+    </div>
+
+    <div class="search-box">
+        <input type="text" placeholder="Pesquisar produtos...">
+    </div>
+
+    <div class="user-dropdown" id="userDropdown">
+        <?php if ($logado): ?>
+            <p style="padding: 12px 15px; font-weight:bold;">Olá, <?= htmlspecialchars($nomeExibicao) ?></p>
+            <a href="editar_perfil.php">Editar Perfil</a>
+            <a href="logout.php">Logout</a>
+        <?php else: ?>
+            <a href="login.php">Login</a>
+        <?php endif; ?>
+    </div>
+
+</header>   
+
+<!-- MENU LATERAL -->
+<nav class="side-menu">
+    <label for="menu-toggle" class="close-btn">✖</label>
+
+    <a href="promocoes.php">Promoções</a>
+    <a href="produtos.php">Produtos</a>
+    <a href="servicos.php">Serviços</a>
+    <a href="contato.php">Contato</a>
+</nav>
+
+<!-- NAV abaixo do header -->
+<nav class="top-nav">
+    <a href="promocoes.php">Promoções</a>
+    <a href="produtos.php">Produtos</a>
+    <a href="servicos.php">Serviços teste</a>
+    <a href="contato.php">Contato</a>
+</nav>
 <main class="container mt-5">
 
     <!-- ==============================
@@ -37,20 +75,19 @@
 
         <!-- INFORMAÇÕES DO PRODUTO -->
         <div class="col-md-7">
-         <h2>Benegripe Multi – 12 Cápsulas</h2>
+            <h2>Benegrip Multi Solução Oral Sabor Frutas Vermelhas 240ml</h2>
 
-        <p class="preco">R$ 16,50</p>
+            <p class="preco">R$ 35,24</p>
 
-    <p>
-    O Benegripe Multi é indicado para o alívio dos sintomas da gripe, oferecendo ação
-    analgésica e descongestionante. Auxilia na redução da febre, dores musculares,
-    congestão nasal e mal-estar gripal.
-    </p>
+            <p>
+                Benegrip Multi alivia dor, febre e congestão nasal em um só produto, tratando os sintomas da gripe. Sua fórmula exclusiva permite doses ajustáveis para crianças a partir de 2 anos.
+            </p>
 
-    <ul>
-    <li>Marca: Hypera Pharma</li>
-    <li>Categoria: Antigripais</li>
-    </ul>
+            <ul>
+                <li>Marca: Benegrip</li>
+                <li>Categoria: Antigripais</li>
+                <li>Disponível na loja e para entrega</li>
+            </ul>
 
             <button class="btn btn-success btn-lg mt-3">Adicionar ao Carrinho</button>
         </div>
@@ -64,7 +101,7 @@
     <section>
         <h3>Produtos Relacionados</h3>
 
-        <div class="row mt-4">
+         <div class="esteira-4">
 
             <div class="ProdRel">
                 <div class="card-prod">
@@ -78,7 +115,7 @@
             <div class="ProdRel">
                 <div class="card-prod">
                     <img src="IMG/Cimegripe.png" class="img-fluid" alt="">
-                    <h6 class="mt-2">Cimegripe – 12 Cápsulas</h6>
+                    <h6 class="mt-2">Cimegripe – 20 Capsulas</h6>
                     <p class="preco">R$ 14,99</p>
                     <a href="Cimegripe.php" class="btn btn-outline-success w-100">Ver Produto</a>
                 </div>
@@ -106,9 +143,13 @@
     </section>
 
 </main>
-
-<footer class="text-center mt-5 p-3 bg-light">
-    <p> 2025 Asclephium.</p>
+<br><br><br><br>
+<footer>
+    <p>&copy; <?= date('Y') ?> Farmácia Saúde & Bem-Estar. Todos os direitos reservados.</p>
+    <h2>Contato</h2>
+    <p>Endereço: Rua da Saúde, 123, Centro, Cidade - Estado</p>
+    <p>Telefone: (11) 1234-5678</p>
+    <p>Email: contato@farmaciasaude.com</p>
 </footer>
 
 </body>

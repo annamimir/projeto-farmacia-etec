@@ -9,7 +9,7 @@ body {
 /* HEADER EM DUAS LINHAS */
 .header {
     width: 100%;
-    background: #0a6569;
+    background: #072c48;
     padding: 10px 20px;
     display: flex;
     flex-direction: column; /* DUAS LINHAS */
@@ -93,7 +93,32 @@ body {
     top: 0;
     width: 250px;
     height: 100%;
-    background: #1d5561;
+   background: #60c2ff;
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    transition: .3s;
+}
+.side-menu a {
+    color: white;
+    padding: 12px 20px;
+    font-size: 18px;
+    text-decoration: none;
+}
+.side-menu a:hover {
+    background: rgba(255,255,255,0.15);
+}
+#menu-toggle:checked ~ .side-menu {
+    left: 0;
+}
+/* MENU LATERAL */
+.side-menu {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background: #60c2ff;
     padding-top: 80px;
     display: flex;
     flex-direction: column;
@@ -112,9 +137,10 @@ body {
     left: 0;
 }
 
+
 /* NAV ESCURO */
 .top-nav {
-    background-color: #172a36;
+    background-color: #4abaff;
     padding: 10px;
     text-align: center;
 }
@@ -147,7 +173,7 @@ body {
 }
 .card {
   background: #fff;
-  border: 2px solid #af0000;
+  border: 2px solid #c3baaa;
   padding: 20px;
   width: 250px;
   border-radius: 8px;
@@ -162,12 +188,12 @@ body {
 }
 .card:hover {
   transform: scale(1.05);
-  border-color: #ff0000;
+  border-color: #cea06e;
 }
 
 /* FOOTER */
 footer {
-    background-color: #25364a;
+    background-color: #072c48;
     color: white;
     text-align: center;
     padding: 20px 10px;
@@ -205,8 +231,16 @@ height: 350px;
 
 .esteira-4 .ProdRel {
     background: #fff;
-    border: 2px solid #af0000;
+    border: 2px solid #c3baaa;
     width: calc(25% - 20px); /* garante 4 itens */
     border-radius: 8px;
     padding: 15px;
+}
+
+.produto-img {
+    max-width: 90%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 10px auto;
 }
