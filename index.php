@@ -25,10 +25,10 @@ $logado = (bool)$usuario;
     <div class="header-top">
         <label for="menu-toggle" class="menu-icon">☰</label>
 
-        <h1 class="logo">Asclephium</h1>
+      <img src="IMG/logo farmacia-1.png" alt="">
 
         <div class="user-area">
-            <img src="IMG/avatar.png" class="avatar" id="avatarBtn">
+            <img src="IMG/usuario.png" class="avatar" id="avatarBtn">
         </div>
     </div>
 
@@ -36,7 +36,7 @@ $logado = (bool)$usuario;
         <input type="text" placeholder="Pesquisar produtos...">
     </div>
 
-    <!-- dropdown atualizado -->
+
     <div class="user-dropdown" id="userDropdown">
 
         <?php if ($logado): ?>
@@ -51,9 +51,9 @@ $logado = (bool)$usuario;
 
 </header>   
 
-<!-- MENU LATERAL -->
+
 <nav class="side-menu">
-    <!-- Botão de fechar -->
+
     <label for="menu-toggle" class="close-btn">✖</label>
 
     <a href="promocoes.php">Promoções</a>
@@ -63,7 +63,6 @@ $logado = (bool)$usuario;
 </nav>
 
 
-<!-- NAV abaixo do header -->
 <nav class="top-nav">
     <a href="promocoes.php">Promoções</a>
     <a href="produtos.php">Produtos</a>
@@ -87,7 +86,7 @@ $logado = (bool)$usuario;
     <section id="carrossel">
         <h2>Destaques da Semana</h2>
         <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-            <!-- SEU CARROSSEL AQUI -->
+    
         </div>
     </section>
 
@@ -121,7 +120,7 @@ $logado = (bool)$usuario;
 </footer>
 
 <script>
-// Dropdown avatar
+
 const avatar = document.getElementById("avatarBtn");
 const dropdown = document.getElementById("userDropdown");
 

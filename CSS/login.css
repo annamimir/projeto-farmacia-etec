@@ -4,7 +4,7 @@ body {
     background-color: #ffffff;
 }
 
-/* Cabeçalho minimalista */
+/*header só o basico */ 
 .top-header {
     width: 100%;
     padding: 20px;
@@ -18,7 +18,7 @@ body {
     margin-left: 20px;
 }
 
-/* Container do login */
+/* cont do login */
 .login-wrapper {
     max-width: 380px;
     margin: 60px auto;
@@ -48,7 +48,6 @@ label {
     display: block;
 }
 
-/* Inputs iguais aos da Drogasil */
 input {
     width: 100%;
     padding: 14px;
@@ -60,15 +59,15 @@ input {
 }
 
 input:focus {
-    border-color: #b30000;
+    border-color: #0a6569;
     background-color: #ffffff;
 }
 
-/* Botão vermelho Drogasil */
+/* btn logar */
 .login-btn {
     width: 100%;
     padding: 14px;
-    background-color: #b80000;
+    background-color: #0a6569;
     border: none;
     border-radius: 25px;
     color: white;
@@ -80,7 +79,7 @@ input:focus {
 }
 
 .login-btn:hover {
-    background-color: #a30000;
+    background-color: #0a6569;
 }
 
 /* Esqueci minha senha */
@@ -107,6 +106,6 @@ input:focus {
 }
 
 .signup a {
-    color: #b80000;
+    color: #0a6569;
     font-weight: bold;
 }

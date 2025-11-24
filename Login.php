@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-// 🔗 Conexão com o banco
+// linkar com BD
 $conn = new mysqli("localhost", "root", "", "farmacia");
 
 if ($conn->connect_error) {
@@ -10,30 +10,30 @@ if ($conn->connect_error) {
 
 $erro = "";
 
-// Quando enviar o formulário
+// Mandando formulario 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $email = $_POST["email"];
     $senha = $_POST["password"];
 
-    // Buscar usuário no banco
+    // procura user no BD
     $sql = "SELECT * FROM usuarios WHERE email = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $email);
     $stmt->execute();
     $resultado = $stmt->get_result();
 
-    // Verificar se existe
+    // Verifica 
     if ($resultado->num_rows === 1) {
         $usuario = $resultado->fetch_assoc();
 
-        // Verificar senha hash
+        // Verificar senha
         if (password_verify($senha, $usuario["senha"])) {
-            // Login OK → criar sessão
+            // Login OK  dps→ criar sessão
             $_SESSION["usuario_id"] = $usuario["id"];
             $_SESSION["usuario_nome"] = $usuario["nome"];
 
-            header("Location: index.php"); // redirecionar para página logada
+            header("Location: index.php"); // redirecionar para página inicial logado
             exit;
         } else {
             $erro = "Senha incorreta.";
@@ -60,12 +60,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 </header>
 
 <div class="login-wrapper">
-    <h2>Entrar</h2>
+    <h2>Entrarrarar</h2>
     <p class="subtitle">Use seu e-mail e senha para acessar sua conta</p>
 
-    <!-- 🔴 Mensagem de erro -->
     <?php if ($erro): ?>
-        <p style="color: red; text-align:center; margin-bottom: 10px;">
+        <p style="color: #0a6569; text-align:center; margin-bottom: 10px;">
             <?= $erro ?>
         </p>
     <?php endif; ?>
