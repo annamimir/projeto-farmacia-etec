@@ -51,17 +51,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
 
-    <link rel="stylesheet" href="CSS/login.css">
+    <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
 
 <header class="top-header">
-    <img src="logo.png" class="logo" alt="Logo">
+    <a href="index.php"><img src="img/logo farmacia-1.png" class="logo" alt="Logo"></a>
 </header>
 
 <div class="login-wrapper">
-    <h2>Entrarrarar</h2>
-    <p class="subtitle">Use seu e-mail e senha para acessar sua conta</p>
+    <h2>Entrar</h2>
+    <p class="subtitulo">Use seu e-mail e senha para acessar sua conta</p>
 
     <?php if ($erro): ?>
         <p style="color: #0a6569; text-align:center; margin-bottom: 10px;">
@@ -83,8 +83,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         </div>
 
         <button type="submit" class="login-btn">Entrar</button>
-
-        <a href="#" class="forgot-password">Esqueci a senha</a> 
 
         <p class="signup">
             Não tem conta? <a href="registrar.php">Cadastre-se</a>

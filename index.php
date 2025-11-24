@@ -13,11 +13,11 @@ $logado = (bool)$usuario;
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="CSS/estilo.css">
+  <link rel="stylesheet" href="css/estilo.css">
 </head>
 <body>
 
-<!-- Checkbox invisível do menu lateral -->
+<!--checkmenu lateral -->
 <input type="checkbox" id="menu-toggle" style="display:none">
 
 <header class="header">
@@ -25,7 +25,7 @@ $logado = (bool)$usuario;
     <div class="header-top">
         <label for="menu-toggle" class="menu-icon">☰</label>
 
-      <img src="IMG/logo farmacia-1.png" alt="">
+      <img src="IMG/logo farmacia-1.png"  class="logo" alt="">
 
         <div class="user-area">
             <img src="IMG/usuario.png" class="avatar" id="avatarBtn">
