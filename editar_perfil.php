@@ -1,54 +1,54 @@
 <?php
 session_start();
 
-// 🔒 Impede acesso sem login
+/* ============================================================
+   BLOQUEIA O ACESSO SE O USUÁRIO NÃO ESTIVER LOGADO
+============================================================ */
 if (!isset($_SESSION['usuario_id'])) {
     header("Location: login.php");
     exit;
 }
 
-// 🔗 Conexão com o banco
+/* ============================================================
+   IMPORTA O ARQUIVO DE CONEXÃO
+============================================================ */
 require "conexao.php";
 
 $id = $_SESSION['usuario_id'];
 
-// 🔵 Carrega dados do usuário logado
-$sql = $conn->prepare("SELECT * FROM usuarios WHERE id = ?");
-$sql->bind_param("i", $id);
-$sql->execute();
-$result = $sql->get_result();
-$usuario = $result->fetch_assoc();
+/* BUSCA DADOS DO USUÁRIO */
+$stmt = $pdo->prepare("SELECT * FROM usuarios WHERE id = ?");
+$stmt->execute([$id]);
+$usuario = $stmt->fetch(PDO::FETCH_ASSOC) ?: [];
 
-/*  
-As variáveis abaixo servem apenas para preencher o formulário  
-com os dados existentes.
-*/
-$nome       = $usuario['nome'];
-$sobrenome  = $usuario['sobrenome'];
-$email      = $usuario['email'];
-$telefone   = $usuario['telefone'];
-$cpf        = $usuario['cpf'];
-$nascimento = $usuario['nascimento'];
-$genero     = $usuario['genero'];
+/* Preenche os campos */
+$nome       = $usuario['nome']        ?? "";
+$sobrenome  = $usuario['sobrenome']   ?? "";
+$email      = $usuario['email']       ?? "";
+$telefone   = $usuario['telefone']    ?? "";
+$cpf        = $usuario['cpf']         ?? "";
+$nascimento = $usuario['nascimento']  ?? "";
+$genero     = $usuario['genero']      ?? "";
 
-$cep        = $usuario['cep'];
-$endereco   = $usuario['endereco'];
-$numero     = $usuario['numero'];
-$bairro     = $usuario['bairro'];
-$cidade     = $usuario['cidade'];
-$estado     = $usuario['estado'];
+$cep        = $usuario['cep']         ?? "";
+$endereco   = $usuario['endereco']    ?? "";
+$numero     = $usuario['numero']      ?? "";
+$bairro     = $usuario['bairro']      ?? "";
+$cidade     = $usuario['cidade']      ?? "";
+$estado     = $usuario['estado']      ?? "";
 
 $mensagem = "";
 
-// 🔵 Quando o formulário é enviado
+/* ============================================================
+   ATUALIZA OS DADOS
+============================================================ */
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-    // Função simples para limpar campos
     function limpar($v) {
-        return trim(filter_var($v, FILTER_SANITIZE_STRING));
+        return trim(filter_var($v, FILTER_SANITIZE_FULL_SPECIAL_CHARS));
     }
 
-    // Coleta dados atualizados
+    /* Recebe dados do formulário */
     $novoNome        = limpar($_POST['nome']);
     $novoSobrenome   = limpar($_POST['sobrenome']);
     $novoEmail       = limpar($_POST['email']);
@@ -64,31 +64,28 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $novoCidade      = limpar($_POST['cidade']);
     $novoEstado      = limpar($_POST['estado']);
 
-    // 🔵 Atualiza tudo no banco
-    $update = $conn->prepare("
+    /* UPDATE no banco */
+    $update = $pdo->prepare("
         UPDATE usuarios SET
             nome = ?, sobrenome = ?, email = ?, telefone = ?, cpf = ?, nascimento = ?, genero = ?,
             cep = ?, endereco = ?, numero = ?, bairro = ?, cidade = ?, estado = ?
         WHERE id = ?
     ");
 
-    $update->bind_param(
-        "sssssssssssssi",
-        $novoNome, $novoSobrenome, $novoEmail, $novoTelefone, $novoCpf, $novoNascimento, $novoGenero,
-        $novoCep, $novoEndereco, $novoNumero, $novoBairro, $novoCidade, $novoEstado,
+    $update->execute([
+        $novoNome, $novoSobrenome, $novoEmail, $novoTelefone, $novoCpf, 
+        $novoNascimento, $novoGenero,
+        $novoCep, $novoEndereco, $novoNumero, $novoBairro, 
+        $novoCidade, $novoEstado,
         $id
-    );
+    ]);
 
-    $update->execute();
-
-    // Atualiza sessão com dados atualizados
+    /* Atualiza sessão */
     $_SESSION["usuario_nome"] = $novoNome;
-    $_SESSION["usuario_email"] = $novoEmail;
 
     $mensagem = "Informações atualizadas com sucesso!";
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -97,10 +94,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <link rel="stylesheet" href="CSS/editar_perfil.css">
 
     <script>
-        /* --------------------------
-           MÁSCARAS
-        -------------------------- */
-
+        /* Máscaras */
         function maskCPF(input) {
             input.value = input.value.replace(/\D/g, "")
                 .replace(/(\d{3})(\d)/, "$1.$2")
@@ -119,17 +113,12 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 .replace(/(\d{5})(\d)/, "$1-$2");
         }
 
-        /* --------------------------
-           AUTO-PREENCHER ENDEREÇO VIA CEP
-        -------------------------- */
+        /* Busca CEP */
         async function buscarCEP(input) {
             const cep = input.value.replace(/\D/g, "");
-
             if (cep.length !== 8) return;
 
-            const url = `https://viacep.com.br/ws/${cep}/json/`;
-
-            const res = await fetch(url);
+            const res = await fetch(`https://viacep.com.br/ws/${cep}/json/`);
             const dados = await res.json();
 
             if (!dados.erro) {
@@ -140,9 +129,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             }
         }
 
-        /* --------------------------
-           VALIDAÇÃO COMPLETA
-        -------------------------- */
+        /* Validação */
         function validarFormulario() {
             let campos = document.querySelectorAll("input[required]");
             for (let c of campos) {
@@ -151,25 +138,18 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     return false;
                 }
             }
-
-            let cpf = document.querySelector("[name='cpf']").value;
-            if (cpf.length !== 14) {
+            if (document.querySelector("[name='cpf']").value.length !== 14) {
                 alert("CPF inválido.");
                 return false;
             }
-
-            let tel = document.querySelector("[name='telefone']").value;
-            if (tel.length < 14) {
+            if (document.querySelector("[name='telefone']").value.length < 14) {
                 alert("Telefone inválido.");
                 return false;
             }
-
-            let cep = document.querySelector("[name='cep']").value;
-            if (cep.length !== 9) {
+            if (document.querySelector("[name='cep']").value.length !== 9) {
                 alert("CEP inválido.");
                 return false;
             }
-
             return true;
         }
     </script>
@@ -238,10 +218,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         <div class="linha">
             <div class="campo">
                 <label>CEP*</label>
-                <input type="text" name="cep" 
-                       oninput="maskCEP(this)" 
-                       onblur="buscarCEP(this)"
-                       value="<?= $cep ?>" required>
+                <input type="text" name="cep" oninput="maskCEP(this)" onblur="buscarCEP(this)" value="<?= $cep ?>" required>
             </div>
 
             <div class="campo">

@@ -1,26 +1,25 @@
 <?php
 session_start();
-require "conexao.php"; // 🔗 Conexão com o banco
+require "conexao.php"; // Conexão com o banco (variável $pdo)
 
 $erro = "";
 
 // Se o formulário foi enviado
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
+    // 🧼 Sanitização dos campos
     $email = trim($_POST["email"]);
     $senha = trim($_POST["password"]);
 
-    // Busca o usuário pelo e-mail
-    $sql = $conn->prepare("SELECT * FROM usuarios WHERE email = ?");
-    $sql->bind_param("s", $email);
-    $sql->execute();
-    $result = $sql->get_result();
+    // 🔍 Busca o usuário pelo e-mail usando PDO
+    $sql = $pdo->prepare("SELECT * FROM usuarios WHERE email = ?");
+    $sql->execute([$email]);
+    $usuario = $sql->fetch(PDO::FETCH_ASSOC);
 
-    // Se o usuário existe
-    if ($result->num_rows === 1) {
-        $usuario = $result->fetch_assoc();
+    // Se encontrou o usuário
+    if ($usuario) {
 
-        // Verifica a senha criptografada
+        // 🔐 Verifica senha criptografada
         if (password_verify($senha, $usuario['senha'])) {
 
             // Salva dados na sessão
@@ -29,13 +28,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             header("Location: index.php");
             exit;
-        } 
+        }
     }
 
+    // Se deu errado
     $erro = "E-mail ou senha incorretos";
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="pt-BR">
