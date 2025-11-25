@@ -82,7 +82,8 @@ $logado = (bool)$usuario;
                 <h2 class="promocao">R$ 8.99</h2>
             </div>
             <div class="card">
-                <a href="#">fralda de velhos</a><br><br>
+                <a href="Resfenol.php"><img src="img/Resfenol.png" alt="Promoções"><br><br>
+                <h2 class="promocao">R$ 12.90</h2>
             </div>
         </div>
     </section>

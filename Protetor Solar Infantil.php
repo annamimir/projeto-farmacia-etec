@@ -72,31 +72,30 @@
 
         <!-- IMAGEM DO PRODUTO -->
         <div class="col-md-5 text-center">
-            <img src="img/fralda.png" alt="Nome do Produto" class="produto-img">
+            <img src="img/protetorsolar.png" alt="Nome do Produto" class="produto-img">
         </div>
 
         <!-- INFORMAÇÕES DO PRODUTO -->
         <div class="col-md-7">
-            <h2>Fralda Needs Baby Ultrasafe XXG 54 Unidades</h2>
+            <h2>Protetor Solar Infantil FPS 70</h2>
 
-            <p class="preco">R$ 78,90</p>
+            <p class="preco">R$ 47,94</p>
 
             <p>
-                Feita com tecnologia europeia que protege contra vazamentos.
-Mantém o seu bebê sequinho por 12 horas.
+             O Needs Kids FPS 70 é um protetor solar infantil em formato de bastão, sem cor, fácil e prático de aplicar.
             </p>
 
             <ul>
-                <li>Marca: Needs</li>
-                <li>Tamanho: Tamanho: XXG</li>
+                <li>Marca: Needs Solar</li>
+                <li>Não possui cor.</li>
                 <li>Disponível na loja e para entrega</li>
             </ul>
 
                 <button class="add-carrinho"
                 data-id="1"
-                data-name="fralda"
-                data-preco="78.90"
-                data-img="IMG/fralda.png">
+                data-name="Protetor Solar Infantil"
+                data-preco="47.94"
+                data-img="IMG/protetorsolar.png">
                 Adicionar ao carrinho
                 </button>
         </div>
