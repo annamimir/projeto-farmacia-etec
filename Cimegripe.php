@@ -66,14 +66,14 @@ $logado = (bool)$usuario;
     <label for="menu-toggle" class="close-btn">✖</label>
 
     <a href="produtos.php">Produtos</a>
-    <a href="servicos.php">Serviços</a>
+    <a href="serviços.php">Serviços</a>
     <a href="contato.php">Contato</a>
 </nav>
 
 <!-- NAV abaixo do header -->
 <nav class="top-nav">
     <a href="produtos.php">Produtos</a>
-    <a href="servicos.php">Serviços teste</a>
+    <a href="serviços.php">Serviços</a>
     <a href="contato.php">Contato</a>
 </nav>
 <main class="container mt-5">
