@@ -72,22 +72,23 @@
 
         <!-- IMAGEM DO PRODUTO -->
         <div class="col-md-5 text-center">
-            <img src="IMG/Benegrip.png" alt="Nome do Produto" class="produto-img">
+            <img src="img/fralda.png" alt="Nome do Produto" class="produto-img">
         </div>
 
         <!-- INFORMAÇÕES DO PRODUTO -->
         <div class="col-md-7">
-            <h2>Benegrip Multi Solução Oral Sabor Frutas Vermelhas 240ml</h2>
+            <h2>Fralda Needs Baby Ultrasafe XXG 54 Unidades</h2>
 
-            <p class="preco">R$ 35,24</p>
+            <p class="preco">R$ 78,90</p>
 
             <p>
-                Benegrip Multi alivia dor, febre e congestão nasal em um só produto, tratando os sintomas da gripe. Sua fórmula exclusiva permite doses ajustáveis para crianças a partir de 2 anos.
+                Feita com tecnologia europeia que protege contra vazamentos.
+Mantém o seu bebê sequinho por 12 horas.
             </p>
 
             <ul>
-                <li>Marca: Benegrip</li>
-                <li>Categoria: Antigripais</li>
+                <li>Marca: Needs</li>
+                <li>Tamanho: Tamanho: XXG</li>
                 <li>Disponível na loja e para entrega</li>
             </ul>
 
