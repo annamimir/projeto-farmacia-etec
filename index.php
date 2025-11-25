@@ -69,6 +69,24 @@ $logado = (bool)$usuario;
     <a href="contato.php">Contato</a>
 </nav>
 
+<h1>Bem Vindo a Asclephium!</h1>
+
+<section class="destaques-home">
+    <div class="destaque-card">
+        <h3>💊 Preços Acessíveis</h3>
+        <p>Medicamentos com valores que cabem no seu bolso.</p>
+    </div>
+
+    <div class="destaque-card">
+        <h3>🩺 Serviços Profissionais</h3>
+        <p>Aplicação de injeção, aferição e muito mais.</p>
+    </div>
+
+    <div class="destaque-card">
+        <h3>🚚 Entrega Rápida</h3>
+        <p>Receba seus medicamentos no conforto da sua casa.</p>
+    </div>
+</section>
 <main>
 <br>
     <section id="promocoes">
@@ -90,20 +108,24 @@ $logado = (bool)$usuario;
 <section id="carrossel" class="my-4"><br>
     <h2 class="text-center mb-3">Destaques da Semana</h2><br>
 
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div id="carouselExampleIndicators" 
+         class="carousel slide" 
+         data-bs-ride="carousel" 
+         data-bs-interval="3000"
+         data-bs-wrap="true">
 
         <!-- Indicadores -->
         <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" class="active"></button>
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"></button>
         </div>
 
         <!-- Imagens -->
         <div class="carousel-inner">
 
             <div class="carousel-item active">
-                <img src="IMG/carrossel_imagem1.jpg" class="d-block mx-auto rounded-slide" alt="Imagem 1">
+                <img src="IMG/bons preços.png" class="d-block mx-auto rounded-slide" alt="Imagem 1">
             </div>
 
             <div class="carousel-item">
@@ -111,7 +133,7 @@ $logado = (bool)$usuario;
             </div>
 
             <div class="carousel-item">
-                <img src="IMG/banner3.jpg" class="d-block mx-auto rounded-slide" alt="Imagem 3">
+                <img src="IMG/carrossel_imagem1.jpg" class="d-block mx-auto rounded-slide" alt="Imagem 3">
             </div>
 
         </div>
@@ -128,6 +150,56 @@ $logado = (bool)$usuario;
     </div>
 </section>
 
+</section>
+</section>
+<section class="newsletter-expandida my-5 p-4">
+
+    <h2 class="text-center mb-3">Participe e Ajude a Melhorar Nossa Farmácia!</h2>
+
+    <p class="text-center mb-4">
+        Queremos oferecer o melhor atendimento possível.  
+        Deixe suas informações, receba promoções exclusivas e nos envie sugestões de produtos e serviços!
+    </p>
+
+    <form class="newsletter-form container">
+
+        <div class="row">
+
+            <div class="col-md-4 mb-3">
+                <label class="form-label">Seu nome</label>
+                <input type="text" class="form-control" placeholder="Digite seu nome">
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <label class="form-label">E-mail</label>
+                <input type="email" class="form-control" placeholder="seuemail@gmail.com">
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <label class="form-label">Telefone (opcional)</label>
+                <input type="text" class="form-control" placeholder="(00) 00000-0000">
+            </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-12 mb-3">
+                <label class="form-label">Sugestões de produtos ou serviços que você gostaria que tivéssemos</label>
+                <textarea class="form-control" rows="3" placeholder="Conte sua ideia..."></textarea>
+            </div>
+
+        </div>
+
+        <div class="text-center mt-3">
+            <button type="submit" class="btn btn-success px-4 py-2">
+                Enviar e participar
+            </button>
+        </div>
+
+    </form>
+
+</section>
 </main>
 <br><br>
 <footer>

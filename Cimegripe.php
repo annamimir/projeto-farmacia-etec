@@ -67,7 +67,7 @@ $logado = (bool)$usuario;
 
     <a href="promocoes.php">Promoções</a>
     <a href="produtos.php">Produtos</a>
-    <a href="servicos.php">Serviços</a>
+    <a href="serviços.php">Serviços</a>
     <a href="contato.php">Contato</a>
 </nav>
 
@@ -75,7 +75,7 @@ $logado = (bool)$usuario;
 <nav class="top-nav">
     <a href="promocoes.php">Promoções</a>
     <a href="produtos.php">Produtos</a>
-    <a href="servicos.php">Serviços teste</a>
+    <a href="serviços.php">Serviços</a>
     <a href="contato.php">Contato</a>
 </nav>
 <main class="container mt-5">

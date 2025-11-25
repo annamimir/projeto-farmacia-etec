@@ -1,15 +1,3 @@
-<?php
-// Inicia a sessão para verificar login
-session_start();
-
-// Inclui conexão com o banco
-require_once "conexao.php";
-
-// Verifica se o usuário está logado
-$usuario = $_SESSION['usuario_nome'] ?? null;
-$nomeExibicao = $usuario ?? "Visitante";
-$logado = (bool)$usuario;
-?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -53,8 +41,7 @@ $logado = (bool)$usuario;
             <a href="login.php">Login</a>
         <?php endif; ?>
     </div>
-    
-</div>
+ </div>
             <div class="carrinho-fixo">
             <a href="Carrinho.php"><img src="img/carrinho.png" alt=""  class="icone-carrinho" ></a>
         </div>
@@ -66,7 +53,7 @@ $logado = (bool)$usuario;
 
     <a href="promocoes.php">Promoções</a>
     <a href="produtos.php">Produtos</a>
-    <a href="servicos.php">Serviços</a>
+    <a href="serviços.php">Serviços</a>
     <a href="contato.php">Contato</a>
 </nav>
 
@@ -74,7 +61,7 @@ $logado = (bool)$usuario;
 <nav class="top-nav">
     <a href="promocoes.php">Promoções</a>
     <a href="produtos.php">Produtos</a>
-    <a href="servicos.php">Serviços teste</a>
+    <a href="serviços.php">Serviços</a>
     <a href="contato.php">Contato</a>
 </nav>
 <main class="container mt-5">
