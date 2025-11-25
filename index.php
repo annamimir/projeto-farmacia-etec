@@ -69,7 +69,7 @@ $logado = (bool)$usuario;
     <a href="contato.php">Contato</a>
 </nav>
 
-<h1>Bem Vindo a Asclephium!</h1>
+
 
 <section class="destaques-home">
     <div class="destaque-card">

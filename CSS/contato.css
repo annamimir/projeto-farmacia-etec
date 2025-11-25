@@ -1,0 +1,381 @@
+/* RESET */
+*{margin:0; padding:0; box-sizing:border-box;}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* HEADER EM DUAS LINHAS */
+.header {
+    width: 100%;
+    background: #072c48;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column; /* DUAS LINHAS */
+    align-items: center;
+    gap: 8px; /* espaço entre linha 1 e barra de pesquisa */
+}
+
+/* LINHA 1: Ícone, logo e avatar */
+.header-top {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* ÍCONE MENU */
+.menu-icon {
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* LOGO */
+.logo {
+    font-size: 32px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+}
+
+/* AVATAR */
+.user-area {
+    display: flex;
+    align-items: center;
+}
+.avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid white;
+}
+
+/* DROPDOWN */
+.user-dropdown {
+    position: absolute;
+    right: 20px;
+    top: 90px;
+    background: #fff;
+    width: 180px;
+    border-radius: 10px;
+    display: none;
+    flex-direction: column;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+}
+.user-dropdown.show { display: flex; }
+.user-dropdown a, .user-dropdown p {
+    padding: 12px 15px;
+    text-decoration: none;
+    color: #333;
+}
+.user-dropdown a:hover { background: #eee; }
+
+/* BARRA DE PESQUISA (LINHA 2) */
+.search-box {
+    width: 60%;
+}
+.search-box input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+/* MENU LATERAL */
+.side-menu {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    width: 250px;
+    height: 100%;
+   background: #60c2ff;
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    transition: .3s;
+}
+.side-menu a {
+    color: white;
+    padding: 12px 20px;
+    font-size: 18px;
+    text-decoration: none;
+}
+.side-menu a:hover {
+    background: rgba(255,255,255,0.15);
+}
+#menu-toggle:checked ~ .side-menu {
+    left: 0;
+}
+/* MENU LATERAL */
+.side-menu {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background: #60c2ff;
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    transition: .3s;
+}
+.side-menu a {
+    color: white;
+    padding: 12px 20px;
+    font-size: 18px;
+    text-decoration: none;
+}
+.side-menu a:hover {
+    background: rgba(255,255,255,0.15);
+}
+#menu-toggle:checked ~ .side-menu {
+    left: 0;
+}
+
+
+/* NAV ESCURO */
+.top-nav {
+    background-color: #4abaff;
+    padding: 10px;
+    text-align: center;
+}
+.top-nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+/* BOTÃO DE FECHAR MENU */
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 26px;
+    cursor: pointer;
+    padding: 5px;
+    user-select: none;
+}
+.close-btn:hover {
+    color: #ffdddd;
+}
+
+/* CARDS */
+.cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+.card {
+  background: #fff;
+  border: 2px solid #c3baaa;
+  padding: 20px;
+  width: 250px;
+  border-radius: 8px;
+}
+.card img{
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; 
+    display: block;
+
+
+}
+.card:hover {
+  transform: scale(1.05);
+  border-color: #cea06e;
+}
+
+/* FOOTER */
+footer {
+    background-color: #072c48;
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+}
+
+.logo {
+height: 200px;
+    object-fit: contain;
+    display: block;
+
+
+}
+.promocao {
+    color: #0a6569;
+    font-size: 20px;
+    font-weight: bold;
+
+}
+.img-fluid {
+height: 350px;
+    object-fit: contain;
+    display: block;
+
+
+}
+.produto-img {
+    max-width: 90%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 10px auto;
+}
+
+.esteira-4 {
+
+        display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+
+}
+
+.esteira-4 .ProdRel {
+    background: #fff;
+    border: 2px solid #c3baaa;
+    width: calc(25% - 20px); /* garante 4 itens */
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.icone-carrinho {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.carrinho-fixo {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #0a6569;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 9999; /* garante que fica acima de tudo */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+}
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    color: #333;
+}
+
+.topo {
+    background: #072c48;
+    color: white;
+    text-align: center;
+    padding: 30px 10px;
+}
+
+.topo h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.info-contato, .formulario {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    flex: 1;
+    min-width: 300px;
+}
+
+.info-contato h2, .formulario h2 {
+    margin-bottom: 15px;
+    color: #072c48;
+}
+
+.info-contato p {
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.whatsapp {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 20px;
+    background: #25d366;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 6px;
+}
+
+.whatsapp:hover {
+    background: #1ebd5a;
+}
+
+/* FORMULÁRIO */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input, textarea {
+    padding: 10px;
+    border: 1px solid #bbb;
+    border-radius: 6px;
+    outline: none;
+}
+
+input:focus, textarea:focus {
+    border-color: #4abaff;
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px;
+    background: #072c48;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #0a3b5e;
+}
+
+/* MAPA */
+.mapa {
+    width: 90%;
+    max-width: 1100px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.mapa h2 {
+    margin-bottom: 15px;
+    color: #072c48;
+}
+
+.mapa iframe {
+    width: 100%;
+    height: 350px;
+    border: none;
+    border-radius: 10px;
+}
