@@ -132,10 +132,10 @@
 
             <div class="ProdRel">
                 <div class="card-prod">
-                    <img src="IMG/Resfenol.png" class="img-fluid" alt="">
-                    <h6 class="mt-2">Resfenol – 20 Cápsulas</h6>
-                    <p class="preco">R$ 12,90</p>
-                    <a href="Resfenol.php" class="btn btn-outline-success w-100">Ver Produto</a>
+                    <img src="IMG/Shampoo pantene Brilho extremo 200ml.jpg" class="img-fluid" alt="">
+                    <h6 class="mt-2">Shampoo pantene Brilho extremo - 200ml</h6>
+                    <p class="preco">R$ 13,99</p>
+                    <a href="Shampoo pantene Brilho extremo 200ml.php" class="btn btn-outline-success w-100">Ver Produto</a>
                 </div>
             </div>
 

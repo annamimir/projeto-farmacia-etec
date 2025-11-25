@@ -21,7 +21,7 @@
     <div class="header-top">
         <label for="menu-toggle" class="menu-icon">☰</label>
 
-        <img src="IMG/logo farmacia-1.png"  class="logo" alt="">
+       <a href="index.php"><img src="IMG/logo farmacia-1.png"  class="logo" alt=""></a>
 
         <div class="user-area">
             <img src="IMG/usuario.png" class="avatar" id="avatarBtn">

@@ -12,6 +12,7 @@
 </head>
 
 <body>
+
 <!--checkmenu lateral -->
 <input type="checkbox" id="menu-toggle" style="display:none">
 
@@ -20,7 +21,7 @@
     <div class="header-top">
         <label for="menu-toggle" class="menu-icon">☰</label>
 
-         <a href="index.php"><img src="IMG/logo farmacia-1.png"  class="logo" alt=""></a>
+      <a href="index.php"><img src="IMG/logo farmacia-1.png"  class="logo" alt=""></a>
 
         <div class="user-area">
             <img src="IMG/usuario.png" class="avatar" id="avatarBtn">
@@ -40,7 +41,9 @@
             <a href="login.php">Login</a>
         <?php endif; ?>
     </div>
-
+            <div class="carrinho-fixo">
+            <a href="Carrinho.php"><img src="img/carrinho.png" alt=""  class="icone-carrinho" ></a>
+        </div>
 </header>   
 
 <!-- MENU LATERAL -->
@@ -69,26 +72,32 @@
 
         <!-- IMAGEM DO PRODUTO -->
         <div class="col-md-5 text-center">
-            <img src="IMG/Resfenol.png" alt="Nome do Produto" class="produto-img">
+            <img src="IMG/Shampoo pantene Brilho extremo 200ml.jpg" alt="Nome do Produto" class="produto-img">
         </div>
 
         <!-- INFORMAÇÕES DO PRODUTO -->
         <div class="col-md-7">
-            <h2>Resfenol – 20 Cápsulas</h2>
+            <h2>Shampoo pantene Brilho extremo - 200ml</h2>
 
-            <p class="preco">R$ 12,90</p>
+            <p class="preco">R$ 13,99</p>
 
             <p>
-              Resfenol é destinado ao alívio da congestão nasal, coriza, febre, dor de cabeça e dores musculares presentes nos estados gripais. 
+                A fórmula ultra-light do sistema Pantene Pro-V remove as impurezas, deixando seu cabelo até 3 vezes* mais macio, e aumenta o brilho desde o primeiro uso.
             </p>
 
             <ul>
-                <li>Marca: Resfenol</li>
-                <li>Indicações: Dor e Febre</li>
+                <li>Marca: Pantene</li>
+                <li>Fórmula avançada, rica em Vitamina Pro-V, Antioxidantes, Extrato de Perla e Aloe Vera.</li>
                 <li>Disponível na loja e para entrega</li>
             </ul>
 
-            <button class="btn btn-success btn-lg mt-3">Adicionar ao Carrinho</button>
+    <button class="add-carrinho"
+    data-id="1"
+    data-name="Cimegripe"
+    data-preco="14.99"
+    data-img="IMG/Cimegripe.png">
+    Adicionar ao carrinho
+    </button>
         </div>
     </div>
 
@@ -104,6 +113,15 @@
 
             <div class="ProdRel">
                 <div class="card-prod">
+                    <img src="IMG/Naldecon.png" class="img-fluid" alt="">
+                    <h6 class="mt-2">Naldecon Dia – 20 Comprimidos</h6>
+                    <p class="preco">R$ 19,90</p>
+                    <a href="Naldecon.php" class="btn btn-outline-success w-100">Ver Produto</a>
+                </div>
+            </div>
+
+            <div class="ProdRel">
+                <div class="card-prod">
                     <img src="IMG/Benegrip.png" class="img-fluid" alt="">
                     <h6 class="mt-2">Benegripe Multi – Solução Oral</h6>
                     <p class="preco">R$ 35,24</p>
@@ -113,10 +131,10 @@
 
             <div class="ProdRel">
                 <div class="card-prod">
-                    <img src="IMG/Cimegripe.png" class="img-fluid" alt="">
-                    <h6 class="mt-2">Cimegripe – 20 Capsulas</h6>
-                    <p class="preco">R$ 14,99</p>
-                    <a href="Cimegripe.php" class="btn btn-outline-success w-100">Ver Produto</a>
+                    <img src="IMG/Resfenol.png" class="img-fluid" alt="">
+                    <h6 class="mt-2">Resfenol – 20 Cápsulas</h6>
+                    <p class="preco">R$ 12,90</p>
+                    <a href="Resfenol.php" class="btn btn-outline-success w-100">Ver Produto</a>
                 </div>
             </div>
 
@@ -126,15 +144,6 @@
                     <h6 class="mt-2">Paracetamol 500mg - 20 Comprimidos</h6>
                     <p class="preco">R$ 8,99</p>
                     <a href="Paracetamol.php" class="btn btn-outline-success w-100">Ver Produto</a>
-                </div>
-            </div>
-
-            <div class="ProdRel">
-                <div class="card-prod">
-                    <img src="IMG/Naldecon.png" class="img-fluid" alt="">
-                    <h6 class="mt-2">Naldecon Dia – 20 Comprimidos</h6>
-                    <p class="preco">R$ 19,90</p>
-                    <a href="Naldecon.php" class="btn btn-outline-success w-100">Ver Produto</a>
                 </div>
             </div>
 
@@ -150,7 +159,44 @@
     <p>Telefone: (11) 1234-5678</p>
     <p>Email: contato@farmaciasaude.com</p>
 </footer>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
 
+    // Quando clicar no botão
+    document.querySelector(".add-carrinho").addEventListener("click", function () {
+
+        // 1️⃣ PEGAR DADOS DO PRODUTO
+        const nome   = this.dataset.name;
+        const preco  = parseFloat(this.dataset.preco);
+        const imagem = this.dataset.img;
+
+        // 2️⃣ PUXAR CARRINHO ATUAL OU CRIAR UM NOVO
+        let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+
+        // 3️⃣ VERIFICAR SE O PRODUTO JÁ ESTÁ NO CARRINHO
+        let itemExistente = carrinho.find(item => item.nome === nome);
+
+        if (itemExistente) {
+            itemExistente.quantidade++;
+            itemExistente.subtotal = itemExistente.quantidade * itemExistente.preco;
+        } else {
+            carrinho.push({
+                nome: nome,
+                preco: preco,
+                quantidade: 1,
+                imagem: imagem,
+                subtotal: preco
+            });
+        }
+
+        // 4️⃣ SALVAR
+        localStorage.setItem("carrinho", JSON.stringify(carrinho));
+
+        alert("Produto adicionado ao carrinho!");
+    });
+
+});
+</script>
 
 </body>
 </html>
