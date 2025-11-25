@@ -40,7 +40,7 @@
             Total: <span id="total-carrinho">R$ 0,00</span>
         </p>
 
-        <a href="finalizar_pagamento.php"><button>Finalizar Compra</button></a>
+        <button class="btn-finalizar" id="btn-finalizar">Finalizar Compra</button>
     </aside>
 
 </main>
