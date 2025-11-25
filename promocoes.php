@@ -1,3 +1,15 @@
+<?php
+// Inicia a sessão para verificar login
+session_start();
+
+// Inclui conexão com o banco
+require_once "conexao.php";
+
+// Verifica se o usuário está logado
+$usuario = $_SESSION['usuario_nome'] ?? null;
+$nomeExibicao = $usuario ?? "Visitante";
+$logado = (bool)$usuario;
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>

@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `sobrenome`, `telefone`, `cpf`, `nascimento`, `genero`, `cep`, `endereco`, `numero`, `bairro`, `cidade`, `estado`) VALUES
-(2, 'pedroca', 'pedrinho@gmail.com', '$2y$10$egHEUKO0q5nUCecLhihUmOB1fM47ObVJHvw7puP3ZGlEgPMEs.ESG', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+(1, 'pedroca', 'pedrinho@gmail.com', '$2y$10$egHEUKO0q5nUCecLhihUmOB1fM47ObVJHvw7puP3ZGlEgPMEs.ESG', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
