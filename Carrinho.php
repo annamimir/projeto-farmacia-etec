@@ -39,7 +39,7 @@
         <p class="texto-total">
             Total: <span id="total-carrinho">R$ 0,00</span>
         </p>
-
+        
         <button class="btn-finalizar" id="btn-finalizar">Finalizar Compra</button>
     </aside>
 
