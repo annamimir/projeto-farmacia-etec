@@ -44,6 +44,10 @@
             <div class="carrinho-fixo">
             <a href="Carrinho.php"><img src="img/carrinho.png" alt=""  class="icone-carrinho" ></a>
         </div>
+         </div>
+            <div class="carrinho-fixo">
+            <a href="Carrinho.php"><img src="img/carrinho.png" alt=""  class="icone-carrinho" ></a>
+        </div>
 </header>   
 
 <!-- MENU LATERAL -->

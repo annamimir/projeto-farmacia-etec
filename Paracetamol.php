@@ -40,7 +40,10 @@
             <a href="login.php">Login</a>
         <?php endif; ?>
     </div>
-
+ </div>
+            <div class="carrinho-fixo">
+            <a href="Carrinho.php"><img src="img/carrinho.png" alt=""  class="icone-carrinho" ></a>
+        </div>
 </header>   
 
 <!-- MENU LATERAL -->

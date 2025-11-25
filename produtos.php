@@ -13,6 +13,10 @@
     <header>
         <h1>Asclephium</h1><br>
         <input type="text" placeholder="Pesquisar produtos..." class="form-control w-75 mx-auto">
+         </div>
+            <div class="carrinho-fixo">
+            <a href="Carrinho.php"><img src="img/carrinho.png" alt=""  class="icone-carrinho" ></a>
+        </div>
     </header>
     <nav>
         <a href="#promocoes">Promoções</a>
