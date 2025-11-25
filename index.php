@@ -70,25 +70,25 @@ $logado = (bool)$usuario;
 </nav>
 
 <main>
-
+<br>
     <section id="promocoes">
-        <h2>Promoções</h2>
+         <h2 class="text-center mb-3">Promoções</h2><br>
         <div class="cards">
             <div class="card">
-                <a href="Cimegripe.php"><img src="img/cimegripe.png" alt="Promoções"><br><br>
-                <h2 class="promocao">R$ 8.99</h2>
+                <a href="Cimegripe.php"><img src="img/cimegripe.png" alt="Promoções"><br>
+                <h2 class="promocao">R$ 8.99</h2></a>
             </div>
             <div class="card">
-                <a href="Resfenol.php"><img src="img/Resfenol.png" alt="Promoções"><br><br>
-                <h2 class="promocao">R$ 12.90</h2>
+                <a href="Resfenol.php"><img src="img/Resfenol.png" alt="Promoções"><br>
+                <h2 class="promocao">R$ 12.90</h2></a>
             </div>
         </div>
     </section>
 
 <!--        CARROSSEL AQUI           -->
 
-<section id="carrossel" class="my-4">
-    <h2 class="text-center mb-3">Destaques da Semana</h2>
+<section id="carrossel" class="my-4"><br>
+    <h2 class="text-center mb-3">Destaques da Semana</h2><br>
 
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
 
@@ -107,7 +107,7 @@ $logado = (bool)$usuario;
             </div>
 
             <div class="carousel-item">
-                <img src="IMG/banner2.jpg" class="d-block mx-auto rounded-slide" alt="Imagem 2">
+                <img src="IMG/servicos.png" class="d-block mx-auto rounded-slide" alt="Imagem 2">
             </div>
 
             <div class="carousel-item">
@@ -129,7 +129,7 @@ $logado = (bool)$usuario;
 </section>
 
 </main>
-
+<br><br>
 <footer>
     <p>&copy; <?= date('Y') ?> Farmácia Saúde & Bem-Estar. Todos os direitos reservados.</p>
     <h2>Contato</h2>
@@ -154,5 +154,6 @@ document.addEventListener("click", () => {
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
