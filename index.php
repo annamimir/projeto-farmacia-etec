@@ -130,29 +130,6 @@ $logado = (bool)$usuario;
     </div>
 </section>
 
-<!--        FIM DO CARROSSEL         -->
-
-
-    <section id="produtos">
-        <h2>Produtos em Destaque</h2>
-        <ul>
-            <li>Medicamentos para resfriados e gripes</li>
-            <li>Produtos de higiene pessoal</li>
-            <li>Vitaminas e suplementos</li>
-            <li>Cosméticos e cuidados com a pele</li>
-        </ul>
-    </section>
-
-    <section id="servicos">
-        <h2>Serviços Oferecidos</h2>
-        <ul>
-            <li>Consultoria farmacêutica</li>
-            <li>Entrega a domicílio</li>
-            <li>Testes de pressão arterial</li>
-            <li>Vacinação</li>
-        </ul>
-    </section>
-
 </main>
 
 <footer>
