@@ -1,0 +1,279 @@
+/* RESET */
+*{margin:0; padding:0; box-sizing:border-box;}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* HEADER EM DUAS LINHAS */
+.header {
+    width: 100%;
+    background: #072c48;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column; /* DUAS LINHAS */
+    align-items: center;
+    gap: 8px; /* espaço entre linha 1 e barra de pesquisa */
+}
+
+/* LINHA 1: Ícone, logo e avatar */
+.header-top {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.titulo {
+        text-align: center;
+    margin: 25px 0;
+
+}   
+
+.titulo h1{
+    font-size: 32px;
+    font-weight: bold;
+    color: #072c48; /* mesma cor do seu header */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 3px solid #4abaff; /* linha estilosa */
+    display: inline-block;
+    padding-bottom: 8px}
+
+/* ÍCONE MENU */
+.menu-icon {
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+/* LOGO */
+.logo {
+    height: 65px;           /* TAMANHO AJUSTADO */
+    object-fit: contain;
+    display: block;
+}
+
+/* AVATAR */
+.user-area {
+    display: flex;
+    align-items: center;
+}
+.avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid white;
+}
+
+/* DROPDOWN */
+.user-dropdown {
+    position: absolute;
+    right: 20px;
+    top: 90px;
+    background: #fff;
+    width: 180px;
+    border-radius: 10px;
+    display: none;
+    flex-direction: column;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+}
+.user-dropdown.show { display: flex; }
+.user-dropdown a, .user-dropdown p {
+    padding: 12px 15px;
+    text-decoration: none;
+    color: #333;
+}
+.user-dropdown a:hover { background: #eee; }
+
+/* BARRA DE PESQUISA (LINHA 2) */
+.search-box {
+    width: 60%;
+}
+.search-box input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+}
+
+/* MENU LATERAL */
+.side-menu {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    background: #60c2ff;
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    transition: .3s;
+}
+.side-menu a {
+    color: white;
+    padding: 12px 20px;
+    font-size: 18px;
+    text-decoration: none;
+}
+.side-menu a:hover {
+    background: rgba(255,255,255,0.15);
+}
+#menu-toggle:checked ~ .side-menu {
+    left: 0;
+}
+
+/* NAV ESCURO */
+.top-nav {
+    background-color: #4abaff;
+    padding: 10px;
+    text-align: center;
+}
+.top-nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 26px;
+    cursor: pointer;
+    padding: 5px;
+    user-select: none;
+}
+.close-btn:hover {
+    color: #ffdddd;
+}
+
+
+/* Usa TUDO que você enviou */
+@import url("seu-estilo-principal.css");
+
+/* COMPORTAMENTO DOS CARDS APENAS PARA A PÁGINA DE PRODUTOS */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+.card {
+    width: 240px;
+    background: #fff;
+    border-radius: 10px;
+    border: 2px solid #c3baaa;
+    padding: 15px;
+    text-align: center;
+    transition: .2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    border-color: #cea06e;
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    margin-bottom: 8px;
+}
+
+.promocao {
+    color: #4abaff;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Botão dentro do card */
+.btn-add {
+    width: 100%;
+    padding: 10px;
+    background: #4abaff;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.btn-add:hover {
+    background: #3a94cc
+}
+
+/* FOOTER */
+footer {
+    background-color: #072c48;
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+}
+
+.promocao {
+    color: #4abaff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* ===== CARROSSEL ===== */
+
+#carouselExampleIndicators .carousel-inner {
+    height: 300px; /* ajustar altura */
+}
+
+#carouselExampleIndicators .carousel-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    overflow: hidden;
+}
+
+#carouselExampleIndicators .carousel-item img {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.rounded-slide {
+    border-radius: 8px;
+    background: #fff;
+    padding: 6px;
+}
+
+
+.icone-carrinho {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.carrinho-fixo {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #0a6569;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 9999; /* garante que fica acima de tudo */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.25);
+}
