@@ -92,7 +92,7 @@ body {
 }
 
 .preco-item {
-    color: #0a6569;
+    color: #2fa5ff;
     font-size: 18px;
     font-weight: bold;
     margin-top: 5px;
@@ -105,7 +105,7 @@ body {
     margin-top: 8px;
 }
 .qtd-botao {
-    background: #0a6569;
+    background: #2fa5ff;
     color: white;
     border: none;
     padding: 6px 10px;
@@ -138,7 +138,7 @@ body {
 }
 
 .btn-finalizar {
-    background: #0a6569;
+    background: #2fa5ff;
     color: white;
     padding: 12px;
     width: 100%;
@@ -148,7 +148,7 @@ body {
     font-size: 18px;
 }
 .btn-finalizar:hover {
-    background: #094f53;
+    background: #1984d5;
 }
 
 

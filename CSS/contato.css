@@ -254,7 +254,7 @@ height: 350px;
     position: fixed;
     top: 20px;
     right: 20px;
-    background: #0a6569;
+    background: #2fa5ff;
     padding: 10px;
     border-radius: 50%;
     cursor: pointer;
@@ -308,7 +308,7 @@ body {
 }
 
 .whatsapp {
-    display: inline-block;
+    display: flex;
     margin-top: 15px;
     padding: 12px 20px;
     background: #25d366;
@@ -316,10 +316,15 @@ body {
     font-weight: bold;
     text-decoration: none;
     border-radius: 6px;
+    justify-content: center;
+    text-align: center;
+    flex-wrap: wrap;
+        align-items: center;
 }
 
 .whatsapp:hover {
     background: #1ebd5a;
+        justify-content: center;
 }
 
 /* FORMULÁRIO */
@@ -378,4 +383,24 @@ button:hover {
     height: 350px;
     border: none;
     border-radius: 10px;
+}
+
+h2 {
+   color: #2fa5ff;
+    text-align: center;
+    margin-bottom: 20px;
+  text-shadow: 2px 2px 10px #afe3ffaf;
+    font-family: 'Cinzel Decorative';
+  margin: 20px;
+  font-size: 2.5em;
+  font-weight: bold;
+
+}
+
+p {
+    color: #2281c9;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Cinzel Decorative';
+    font-weight: bold;
 }
