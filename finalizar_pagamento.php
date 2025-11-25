@@ -1,9 +1,16 @@
 <?php
 session_start();
+require_once "conexao.php"; // ← precisa SIM
 
-/* Exemplo: você pode puxar o total da compra da sessão */
-$total = $_SESSION['total_compra'] ?? "0,00";
+// se quiser impedir acesso sem login:
+if (!isset($_SESSION['usuario_id'])) {
+    header("Location: Login.php");
+    exit;
+}
+
+$total = $_SESSION['total_compra'] ?? 0;
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
