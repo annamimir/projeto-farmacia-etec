@@ -1,48 +1,41 @@
 <?php
 session_start();
-
-// linkar com BD
-$conn = new mysqli("localhost", "root", "", "farmacia");
-
-if ($conn->connect_error) {
-    die("Erro de conexão: " . $conn->connect_error);
-}
+require "conexao.php"; // 🔗 Conexão com o banco
 
 $erro = "";
 
-// Mandando formulario 
+// Se o formulário foi enviado
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-    $email = $_POST["email"];
-    $senha = $_POST["password"];
+    $email = trim($_POST["email"]);
+    $senha = trim($_POST["password"]);
 
-    // procura user no BD
-    $sql = "SELECT * FROM usuarios WHERE email = ?";
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-    $resultado = $stmt->get_result();
+    // Busca o usuário pelo e-mail
+    $sql = $conn->prepare("SELECT * FROM usuarios WHERE email = ?");
+    $sql->bind_param("s", $email);
+    $sql->execute();
+    $result = $sql->get_result();
 
-    // Verifica 
-    if ($resultado->num_rows === 1) {
-        $usuario = $resultado->fetch_assoc();
+    // Se o usuário existe
+    if ($result->num_rows === 1) {
+        $usuario = $result->fetch_assoc();
 
-        // Verificar senha
-        if (password_verify($senha, $usuario["senha"])) {
-            // Login OK  dps→ criar sessão
-            $_SESSION["usuario_id"] = $usuario["id"];
-            $_SESSION["usuario_nome"] = $usuario["nome"];
+        // Verifica a senha criptografada
+        if (password_verify($senha, $usuario['senha'])) {
 
-            header("Location: index.php"); // redirecionar para página inicial logado
+            // Salva dados na sessão
+            $_SESSION["usuario_id"] = $usuario['id'];
+            $_SESSION["usuario_nome"] = $usuario['nome'];
+
+            header("Location: index.php");
             exit;
-        } else {
-            $erro = "Senha incorreta.";
-        }
-    } else {
-        $erro = "E-mail não encontrado.";
+        } 
     }
+
+    $erro = "E-mail ou senha incorretos";
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="pt-BR">

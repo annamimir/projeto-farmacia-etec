@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Tempo de geração: 20/11/2025 às 19:38
+-- Tempo de geração: 25/11/2025 às 00:07
 -- Versão do servidor: 9.1.0
 -- Versão do PHP: 8.3.14
 
@@ -38,16 +38,22 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `cpf` varchar(14) DEFAULT NULL,
   `nascimento` date DEFAULT NULL,
   `genero` varchar(20) DEFAULT NULL,
+  `cep` varchar(9) DEFAULT NULL,
+  `endereco` varchar(150) DEFAULT NULL,
+  `numero` varchar(10) DEFAULT NULL,
+  `bairro` varchar(100) DEFAULT NULL,
+  `cidade` varchar(100) DEFAULT NULL,
+  `estado` varchar(2) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
 -- Despejando dados para a tabela `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `sobrenome`, `telefone`, `cpf`, `nascimento`, `genero`) VALUES
-(1, 'pedroca', 'pedrinho@gmail.com', '$2y$10$UHdcKvH6tVPbjOqzD6xd7ukifL6uPM2bgMbqegmNqqiry9mYXbf6i', NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `sobrenome`, `telefone`, `cpf`, `nascimento`, `genero`, `cep`, `endereco`, `numero`, `bairro`, `cidade`, `estado`) VALUES
+(2, 'pedroca', 'pedrinho@gmail.com', '$2y$10$egHEUKO0q5nUCecLhihUmOB1fM47ObVJHvw7puP3ZGlEgPMEs.ESG', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

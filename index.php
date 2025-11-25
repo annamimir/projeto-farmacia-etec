@@ -1,9 +1,15 @@
 <?php
 session_start();
+
+/*  
+Verifica se o usuário está logado e mostra o nome dele.
+Se não estiver, exibe "Visitante".
+*/
 $usuario = $_SESSION['usuario_nome'] ?? null;
 $nomeExibicao = $usuario ?? "Visitante";
 $logado = (bool)$usuario;
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>

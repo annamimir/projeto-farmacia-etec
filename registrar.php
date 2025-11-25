@@ -1,31 +1,31 @@
 <?php
 session_start();
 
-// 🔗 Conexão com o banco
-$conn = new mysqli("localhost", "root", "", "farmacia");
+// 🔗 Importa o arquivo de conexão com o banco
+require "conexao.php";
 
-if ($conn->connect_error) {
-    die("Erro na conexão: " . $conn->connect_error);
-}
-
+/*  
+$erro e $sucesso serão usados para exibir mensagens na tela
+*/
 $erro = "";
 $sucesso = "";
 
 // 🟦 Quando o formulário for enviado
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
+    // Recebe e limpa os dados
     $nome = trim($_POST["nome"]);
     $email = trim($_POST["email"]);
     $senha = $_POST["password"];
     $confirmar = $_POST["confirmPassword"];
 
-    // 🟦 1 — Verifica se as senhas são iguais
+    // 1 — Verifica se as senhas são iguais
     if ($senha !== $confirmar) {
         $erro = "As senhas não coincidem.";
     } 
     else {
 
-        // 🟦 2 — Verifica se já existe e-mail no banco
+        // 2 — Verifica se o e-mail já existe
         $sql = "SELECT id FROM usuarios WHERE email = ?";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("s", $email);
@@ -37,18 +37,16 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         } 
         else {
 
-            // 🟦 3 — Criptografa a senha
+            // 3 — Criptografa a senha antes de salvar
             $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
 
-            // 🟦 4 — Salvar no banco
+            // 4 — Insere o novo usuário
             $insert = "INSERT INTO usuarios (nome, email, senha) VALUES (?, ?, ?)";
             $stmt2 = $conn->prepare($insert);
             $stmt2->bind_param("sss", $nome, $email, $senhaHash);
 
             if ($stmt2->execute()) {
                 $sucesso = "Conta criada com sucesso! Redirecionando...";
-                
-                // Redirecionar após 2 segundos
                 header("refresh:2;url=login.php");
             } else {
                 $erro = "Erro ao cadastrar. Tente novamente.";
