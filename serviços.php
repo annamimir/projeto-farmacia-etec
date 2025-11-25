@@ -14,13 +14,22 @@
         <h1>Asclephium</h1><br>
         <input type="text" placeholder="Pesquisar produtos..." class="form-control w-75 mx-auto">
     </header>
-    <nav>
-        <a href="#promocoes">Promoções</a>
-        <a href="#produtos">Produtos</a>
-        <a href="#servicos">Serviços</a>
-        <a href="#contato">Contato</a>
-    </nav>
+<nav class="side-menu">
+    <label for="menu-toggle" class="close-btn">✖</label>
 
+    <a href="promocoes.php">Promoções</a>
+    <a href="produtos.php">Produtos</a>
+    <a href="serviços.php">Serviços</a>
+    <a href="contato.php">Contato</a>
+</nav>
+
+<!-- NAV abaixo do header -->
+<nav class="top-nav">
+    <a href="promocoes.php">Promoções</a>
+    <a href="produtos.php">Produtos</a>
+    <a href="serviços.php">Serviços</a>
+    <a href="contato.php">Contato</a>
+</nav>
   
   
     

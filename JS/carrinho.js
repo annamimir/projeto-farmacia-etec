@@ -67,10 +67,19 @@ document.getElementById("btn-finalizar").addEventListener("click", () => {
         return;
     }
 
-    alert("Compra finalizada!");
-    localStorage.removeItem("carrinho");
+document.getElementById("btn-finalizar").addEventListener("click", () => {
+    let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
 
-    carregarCarrinho();
+    if (carrinho.length === 0) {
+        alert("Seu carrinho está vazio!");
+        return;
+    }
+
+    // Salvar total da compra na sessão via requisição
+    let total = carrinho.reduce((soma, item) => soma + item.subtotal, 0);
+
+    // Salvar total na session (via GET simples)
+    window.location.href = "salvar_total.php?total=" + total.toFixed(2);
 });
 
 
