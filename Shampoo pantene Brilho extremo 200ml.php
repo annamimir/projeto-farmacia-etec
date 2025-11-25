@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produto | Farmácia</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/produto.css">
+    <link rel="stylesheet" href="CSS/produto.css">
 
     <style>
     </style>
 </head>
 
 <body>
+
 <!--checkmenu lateral -->
 <input type="checkbox" id="menu-toggle" style="display:none">
 
@@ -40,7 +41,9 @@
             <a href="login.php">Login</a>
         <?php endif; ?>
     </div>
-
+            <div class="carrinho-fixo">
+            <a href="Carrinho.php"><img src="img/carrinho.png" alt=""  class="icone-carrinho" ></a>
+        </div>
 </header>   
 
 <!-- MENU LATERAL -->
@@ -69,32 +72,32 @@
 
         <!-- IMAGEM DO PRODUTO -->
         <div class="col-md-5 text-center">
-            <img src="IMG/Naldecon.png" alt="Nome do Produto" class="produto-img">
+            <img src="IMG/Shampoo pantene Brilho extremo 200ml.jpg" alt="Nome do Produto" class="produto-img">
         </div>
 
         <!-- INFORMAÇÕES DO PRODUTO -->
         <div class="col-md-7">
-            <h2>Naldecon Dia – 24 comprimidos</h2>
+            <h2>Shampoo pantene Brilho extremo - 200ml</h2>
 
-            <p class="preco">R$ 19,90</p>
+            <p class="preco">R$ 13,99</p>
 
             <p>
-                Antigripal Naldecon Dia Blister 4 Comprimidos (paracetamol + cloridrato de fenilefrina) é indicado para aliviar os sintomas de gripes e resfriados, como dor, febre e congestão nasal.
+                A fórmula ultra-light do sistema Pantene Pro-V remove as impurezas, deixando seu cabelo até 3 vezes* mais macio, e aumenta o brilho desde o primeiro uso.
             </p>
 
             <ul>
-                <li>Marca: Naldecon</li>
-                <li>Categoria: Antigripais</li>
+                <li>Marca: Pantene</li>
+                <li>Fórmula avançada, rica em Vitamina Pro-V, Antioxidantes, Extrato de Perla e Aloe Vera.</li>
                 <li>Disponível na loja e para entrega</li>
             </ul>
 
-                <button class="add-carrinho"
-                data-id="1"
-                data-name="Naldecon"
-                data-preco="19.90"
-                data-img="IMG/naldecon.png">
-                Adicionar ao carrinho
-                </button>
+    <button class="add-carrinho"
+    data-id="1"
+    data-name="Cimegripe"
+    data-preco="14.99"
+    data-img="IMG/Cimegripe.png">
+    Adicionar ao carrinho
+    </button>
         </div>
     </div>
 
@@ -110,19 +113,19 @@
 
             <div class="ProdRel">
                 <div class="card-prod">
-                    <img src="IMG/Benegrip.png" class="img-fluid" alt="">
-                    <h6 class="mt-2">Benegripe Multi – Solução Oral</h6>
-                    <p class="preco">R$ 35,24</p>
-                    <a href="Benegripe.php" class="btn btn-outline-success w-100">Ver Produto</a>
+                    <img src="IMG/Naldecon.png" class="img-fluid" alt="">
+                    <h6 class="mt-2">Naldecon Dia – 20 Comprimidos</h6>
+                    <p class="preco">R$ 19,90</p>
+                    <a href="Naldecon.php" class="btn btn-outline-success w-100">Ver Produto</a>
                 </div>
             </div>
 
             <div class="ProdRel">
                 <div class="card-prod">
-                    <img src="IMG/Cimegripe.png" class="img-fluid" alt="">
-                    <h6 class="mt-2">Cimegripe – 20 Capsulas</h6>
-                    <p class="preco">R$ 14,99</p>
-                    <a href="Cimegripe.php" class="btn btn-outline-success w-100">Ver Produto</a>
+                    <img src="IMG/Benegrip.png" class="img-fluid" alt="">
+                    <h6 class="mt-2">Benegripe Multi – Solução Oral</h6>
+                    <p class="preco">R$ 35,24</p>
+                    <a href="Benegripe.php" class="btn btn-outline-success w-100">Ver Produto</a>
                 </div>
             </div>
 
@@ -194,5 +197,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 </script>
+
 </body>
 </html>

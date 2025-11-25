@@ -61,3 +61,103 @@ $logado = (bool)$usuario;
         <a href="carrinho.php"><img src="img/carrinho.png" alt="" class="icone-carrinho"></a>
     </div>
 </header>
+
+    <hr class="my-5">
+
+    <!-- ==============================
+         PRODUTOS RELACIONADOS
+    ==================================== -->
+    <section>
+        <h3>Produtos Relacionados</h3>
+
+         <div class="esteira-4">
+
+            <div class="ProdRel">
+                <div class="card-prod">
+                    <img src="IMG/Naldecon.png" class="img-fluid" alt="">
+                    <h6 class="mt-2">Naldecon Dia – 20 Comprimidos</h6>
+                    <p class="preco">R$ 19,90</p>
+                    <a href="Naldecon.php" class="btn btn-outline-success w-100">Ver Produto</a>
+                </div>
+            </div>
+
+            <div class="ProdRel">
+                <div class="card-prod">
+                    <img src="IMG/Benegrip.png" class="img-fluid" alt="">
+                    <h6 class="mt-2">Benegripe Multi – Solução Oral</h6>
+                    <p class="preco">R$ 35,24</p>
+                    <a href="Benegripe.php" class="btn btn-outline-success w-100">Ver Produto</a>
+                </div>
+            </div>
+
+            <div class="ProdRel">
+                <div class="card-prod">
+                    <img src="IMG/Shampoo pantene Brilho extremo 200ml.jpg" class="img-fluid" alt="">
+                    <h6 class="mt-2">Shampoo pantene Brilho extremo - 200ml</h6>
+                    <p class="preco">R$ 13,99</p>
+                    <a href="Shampoo pantene Brilho extremo 200ml.php" class="btn btn-outline-success w-100">Ver Produto</a>
+                </div>
+            </div>
+
+            <div class="ProdRel">
+                <div class="card-prod">
+                    <img src="IMG/Paracetamol 500mg.png" class="img-fluid" alt="">
+                    <h6 class="mt-2">Paracetamol 500mg - 20 Comprimidos</h6>
+                    <p class="preco">R$ 8,99</p>
+                    <a href="Paracetamol.php" class="btn btn-outline-success w-100">Ver Produto</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+<br><br><br><br>
+<footer>
+    <p>&copy; <?= date('Y') ?> Farmácia Saúde & Bem-Estar. Todos os direitos reservados.</p>
+    <h2>Contato</h2>
+    <p>Endereço: Rua da Saúde, 123, Centro, Cidade - Estado</p>
+    <p>Telefone: (11) 1234-5678</p>
+    <p>Email: contato@farmaciasaude.com</p>
+</footer>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    // Quando clicar no botão
+    document.querySelector(".add-carrinho").addEventListener("click", function () {
+
+        // 1️⃣ PEGAR DADOS DO PRODUTO
+        const nome   = this.dataset.name;
+        const preco  = parseFloat(this.dataset.preco);
+        const imagem = this.dataset.img;
+
+        // 2️⃣ PUXAR CARRINHO ATUAL OU CRIAR UM NOVO
+        let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+
+        // 3️⃣ VERIFICAR SE O PRODUTO JÁ ESTÁ NO CARRINHO
+        let itemExistente = carrinho.find(item => item.nome === nome);
+
+        if (itemExistente) {
+            itemExistente.quantidade++;
+            itemExistente.subtotal = itemExistente.quantidade * itemExistente.preco;
+        } else {
+            carrinho.push({
+                nome: nome,
+                preco: preco,
+                quantidade: 1,
+                imagem: imagem,
+                subtotal: preco
+            });
+        }
+
+        // 4️⃣ SALVAR
+        localStorage.setItem("carrinho", JSON.stringify(carrinho));
+
+        alert("Produto adicionado ao carrinho!");
+    });
+
+});
+</script>
+
+</body>
+</html>

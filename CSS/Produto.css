@@ -219,6 +219,13 @@ height: 350px;
 
 
 }
+.produto-img {
+    max-width: 90%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 10px auto;
+}
 
 .esteira-4 {
 
@@ -237,14 +244,6 @@ height: 350px;
     padding: 15px;
 }
 
-<<<<<<< HEAD
-.produto-img {
-    max-width: 90%;
-    height: auto;
-    object-fit: contain;
-    display: block;
-    margin: 0 auto 10px auto;
-=======
 .icone-carrinho {
     width: 40px;
     height: 40px;
@@ -261,5 +260,4 @@ height: 350px;
     cursor: pointer;
     z-index: 9999; /* garante que fica acima de tudo */
     box-shadow: 0 4px 8px rgba(0,0,0,0.25);
->>>>>>> e68612c5fa6594c4e14c6675796a45dc8bc06c8b
 }

@@ -20,7 +20,7 @@
     <div class="header-top">
         <label for="menu-toggle" class="menu-icon">☰</label>
 
-        <img src="IMG/logo farmacia-1.png"  class="logo" alt="">
+         <a href="index.php"><img src="IMG/logo farmacia-1.png"  class="logo" alt=""></a>
 
         <div class="user-area">
             <img src="IMG/usuario.png" class="avatar" id="avatarBtn">
@@ -88,15 +88,18 @@
                 <li>Disponível na loja e para entrega</li>
             </ul>
 
-            <button class="btn btn-success btn-lg mt-3">Adicionar ao Carrinho</button>
+                <button class="add-carrinho"
+                data-id="1"
+                data-name="Resfenol"
+                data-preco="12.90"
+                data-img="IMG/Resfenol.png">
+                Adicionar ao carrinho
+                </button>
         </div>
     </div>
 
     <hr class="my-5">
 
-    <!-- ==============================
-         PRODUTOS RELACIONADOS
-    ==================================== -->
     <section>
         <h3>Produtos Relacionados</h3>
 
@@ -150,7 +153,43 @@
     <p>Telefone: (11) 1234-5678</p>
     <p>Email: contato@farmaciasaude.com</p>
 </footer>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
 
+    // Quando clicar no botão
+    document.querySelector(".add-carrinho").addEventListener("click", function () {
 
+        // 1️⃣ PEGAR DADOS DO PRODUTO
+        const nome   = this.dataset.name;
+        const preco  = parseFloat(this.dataset.preco);
+        const imagem = this.dataset.img;
+
+        // 2️⃣ PUXAR CARRINHO ATUAL OU CRIAR UM NOVO
+        let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
+
+        // 3️⃣ VERIFICAR SE O PRODUTO JÁ ESTÁ NO CARRINHO
+        let itemExistente = carrinho.find(item => item.nome === nome);
+
+        if (itemExistente) {
+            itemExistente.quantidade++;
+            itemExistente.subtotal = itemExistente.quantidade * itemExistente.preco;
+        } else {
+            carrinho.push({
+                nome: nome,
+                preco: preco,
+                quantidade: 1,
+                imagem: imagem,
+                subtotal: preco
+            });
+        }
+
+        // 4️⃣ SALVAR
+        localStorage.setItem("carrinho", JSON.stringify(carrinho));
+
+        alert("Produto adicionado ao carrinho!");
+    });
+
+});
+</script>
 </body>
 </html>
