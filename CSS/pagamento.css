@@ -1,3 +1,4 @@
+/* ======== RESET ======== */
 * {
     margin: 0;
     padding: 0;
@@ -5,13 +6,13 @@
     font-family: Arial, sans-serif;
 }
 
-/* BODY IGUAL AO CARRINHO */
+/* ======== BODY ======== */
 body {
     background: #f4f4f4;
     color: #222;
 }
 
-/* HEADER IGUAL */
+/* ======== CABEÇALHO (OPCIONAL) ======== */
 .cabecalho {
     background: #0a6569;
     padding: 15px;
@@ -22,25 +23,27 @@ body {
     height: 200px;
     object-fit: contain;
     display: block;
-    margin: 0 auto; 
+    margin: 0 auto;
 }
 
-/* NAV IGUAL */
+/* ======== MENU SUPERIOR (OPCIONAL) ======== */
 .menu-navegacao {
     background: #172a36;
     padding: 12px;
     text-align: center;
 }
+
 .menu-navegacao a {
     color: white;
     margin: 0 15px;
     text-decoration: none;
 }
+
 .menu-navegacao a:hover {
     text-decoration: underline;
 }
 
-/* ======== CONTEÚDO PRINCIPAL IGUAL AO RESUMO DO CARRINHO ======== */
+/* ======== CONTAINER ======== */
 .container {
     max-width: 900px;
     background: #fff;
@@ -51,7 +54,7 @@ body {
     box-shadow: 0 2px 10px #00000030;
 }
 
-/* TÍTULOS (PADRÃO DO CARRINHO) */
+/* ======== TITULOS ======== */
 h2 {
     text-align: center;
     margin-bottom: 20px;
@@ -67,7 +70,7 @@ h3 {
     font-weight: bold;
 }
 
-/* BLOCOS DE OPÇÃO – ESTILO IGUAL AO ITEM DO CARRINHO */
+/* ======== OPÇÕES / RADIO ======== */
 .opcoes {
     display: flex;
     flex-direction: column;
@@ -91,10 +94,24 @@ h3 {
 }
 
 .opcao input {
-    transform: scale(1.3);
+    transform: scale(1.4);
 }
 
-/* TOTAL IGUAL AO TEXTO DO RESUMO */
+/* ======== BLOCO DE INFORMAÇÕES ======== */
+.box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.box p {
+    font-size: 17px;
+    margin: 6px 0;
+}
+
+/* ======== TOTAL ======== */
 .total {
     margin-top: 20px;
     font-size: 20px;
@@ -106,8 +123,11 @@ h3 {
     color: #0a6569;
 }
 
-/* BOTÃO IGUAL AO CARRINHO */
-.btn-finalizar {
+/* ======== BOTÕES ======== */
+button,
+.btn,
+.btn-finalizar,
+.btn-retirada {
     background: #0a6569;
     color: white;
     padding: 14px;
@@ -117,9 +137,36 @@ h3 {
     cursor: pointer;
     font-size: 18px;
     margin-top: 25px;
+    text-align: center;
+    display: block;
     transition: 0.2s;
+    text-decoration: none;
 }
 
-.btn-finalizar:hover {
+button:hover,
+.btn:hover,
+.btn-finalizar:hover,
+.btn-retirada:hover {
     background: #094f53;
+}
+
+/* ======== QR CODE ======== */
+.qrcode {
+    display: block;
+    width: 300px;
+    margin: 20px auto;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+}
+
+/* ======== STATUS ======== */
+.status {
+    padding: 15px;
+    background: #e9f8f8;
+    border: 1px solid #0a6569;
+    color: #0a6569;
+    font-weight: bold;
+    border-radius: 8px;
+    margin: 20px 0;
+    text-align: center;
 }

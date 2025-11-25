@@ -1,11 +1,20 @@
 <?php
 session_start();
 
-$formaPagamento = $_POST['pagamento'] ?? '';
-$formaEntrega   = $_POST['entrega'] ?? '';
+if (!isset($_POST['pagamento']) || !isset($_POST['entrega'])) {
+    header("Location: finalizar_pagamento.php");
+    exit;
+}
 
-$_SESSION['pagamento'] = $formaPagamento;
-$_SESSION['entrega']   = $formaEntrega;
+$_SESSION['pagamento'] = $_POST['pagamento'];
+$_SESSION['entrega']   = $_POST['entrega'];
 
-header("Location: pedido_confirmado.php");
+// Status inicial
+$_SESSION['status_pedido'] = "Aguardando pagamento";
+
+// Endereço loja caso seja retirada
+$_SESSION['endereco_loja'] = "Rua das Flores, 129 - Centro, São Paulo - SP";
+
+header("Location: pagamento.php");
 exit;
+?>

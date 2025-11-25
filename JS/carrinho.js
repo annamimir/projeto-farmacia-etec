@@ -67,14 +67,6 @@ document.getElementById("btn-finalizar").addEventListener("click", () => {
         return;
     }
 
-document.getElementById("btn-finalizar").addEventListener("click", () => {
-    let carrinho = JSON.parse(localStorage.getItem("carrinho")) || [];
-
-    if (carrinho.length === 0) {
-        alert("Seu carrinho está vazio!");
-        return;
-    }
-
     // Salvar total da compra na sessão via requisição
     let total = carrinho.reduce((soma, item) => soma + item.subtotal, 0);
 
