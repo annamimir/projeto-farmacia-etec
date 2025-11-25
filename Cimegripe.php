@@ -16,14 +16,16 @@ $logado = (bool)$usuario;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produto | Farmácia</title>
-
-    <!-- Bootstrap e CSS do produto -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="CSS/produto.css">
+
+    <style>
+    </style>
 </head>
+
 <body>
 
-<!-- Checkbox do menu lateral -->
+<!--checkmenu lateral -->
 <input type="checkbox" id="menu-toggle" style="display:none">
 
 <header class="header">
@@ -31,36 +33,89 @@ $logado = (bool)$usuario;
     <div class="header-top">
         <label for="menu-toggle" class="menu-icon">☰</label>
 
-        <a href="index.php"><img src="IMG/logo farmacia-1.png" class="logo" alt=""></a>
+      <a href="index.php"><img src="IMG/logo farmacia-1.png"  class="logo" alt=""></a>
 
         <div class="user-area">
             <img src="IMG/usuario.png" class="avatar" id="avatarBtn">
         </div>
     </div>
 
-    <!-- Barra de pesquisa -->
     <div class="search-box">
         <input type="text" placeholder="Pesquisar produtos...">
     </div>
 
-    <!-- Dropdown de usuário -->
     <div class="user-dropdown" id="userDropdown">
         <?php if ($logado): ?>
             <p style="padding:12px 15px; font-weight:bold;">
                 Olá, <?= htmlspecialchars($nomeExibicao) ?>
             </p>
+            <p style="padding: 12px 15px; font-weight:bold;">Olá, <?= htmlspecialchars($nomeExibicao) ?></p>
             <a href="editar_perfil.php">Editar Perfil</a>
             <a href="logout.php">Logout</a>
         <?php else: ?>
             <a href="login.php">Login</a>
         <?php endif; ?>
     </div>
+            <div class="carrinho-fixo">
+            <a href="Carrinho.php"><img src="img/carrinho.png" alt=""  class="icone-carrinho" ></a>
+        </div>
+</header>   
 
-    <!-- Ícone fixo do carrinho -->
-    <div class="carrinho-fixo">
-        <a href="carrinho.php"><img src="img/carrinho.png" alt="" class="icone-carrinho"></a>
+<!-- MENU LATERAL -->
+<nav class="side-menu">
+    <label for="menu-toggle" class="close-btn">✖</label>
+
+    <a href="promocoes.php">Promoções</a>
+    <a href="produtos.php">Produtos</a>
+    <a href="servicos.php">Serviços</a>
+    <a href="contato.php">Contato</a>
+</nav>
+
+<!-- NAV abaixo do header -->
+<nav class="top-nav">
+    <a href="promocoes.php">Promoções</a>
+    <a href="produtos.php">Produtos</a>
+    <a href="servicos.php">Serviços teste</a>
+    <a href="contato.php">Contato</a>
+</nav>
+<main class="container mt-5">
+
+    <!-- ==============================
+         SEÇÃO PRINCIPAL DO PRODUTO
+    ==================================== -->
+    <div class="row align-items-center">
+
+        <!-- IMAGEM DO PRODUTO -->
+        <div class="col-md-5 text-center">
+            <img src="IMG/Cimegripe.png" alt="Nome do Produto" class="produto-img">
+        </div>
+
+        <!-- INFORMAÇÕES DO PRODUTO -->
+        <div class="col-md-7">
+            <h2>Cimegripe - 20 Cápsulas</h2>
+
+            <p class="preco">R$ 14,99</p>
+
+            <p>
+                O Cimegripe é indicado para o alívio dos sintomas da gripe e resfriado,
+                como dor de cabeça, febre, dor no corpo, dor de garganta e congestão nasal.
+            </p>
+
+            <ul>
+                <li>Marca: Cimed</li>
+                <li>Categoria: Antigripais</li>
+                <li>Disponível na loja e para entrega</li>
+            </ul>
+
+    <button class="add-carrinho"
+    data-id="1"
+    data-name="Cimegripe"
+    data-preco="14.99"
+    data-img="IMG/Cimegripe.png">
+    Adicionar ao carrinho
+    </button>
+        </div>
     </div>
-</header>
 
     <hr class="my-5">
 
