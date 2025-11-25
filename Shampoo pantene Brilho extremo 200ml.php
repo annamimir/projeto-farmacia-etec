@@ -54,7 +54,6 @@
 <nav class="side-menu">
     <label for="menu-toggle" class="close-btn">✖</label>
 
-    <a href="promocoes.php">Promoções</a>
     <a href="produtos.php">Produtos</a>
     <a href="serviços.php">Serviços</a>
     <a href="contato.php">Contato</a>
@@ -62,7 +61,6 @@
 
 <!-- NAV abaixo do header -->
 <nav class="top-nav">
-    <a href="promocoes.php">Promoções</a>
     <a href="produtos.php">Produtos</a>
     <a href="serviços.php">Serviços teste</a>
     <a href="contato.php">Contato</a>

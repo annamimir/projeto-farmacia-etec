@@ -19,7 +19,6 @@
 <nav class="menu-navegacao">
     <a href="index.php">Início</a>
     <a href="produtos.php">Produtos</a>
-    <a href="promocoes.php">Promoções</a>
     <a href="carrinho.php">Carrinho</a>
 </nav>
 
