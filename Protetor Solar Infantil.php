@@ -1,15 +1,3 @@
-<?php
-// Inicia a sessão para verificar login
-session_start();
-
-// Inclui conexão com o banco
-require_once "conexao.php";
-
-// Verifica se o usuário está logado
-$usuario = $_SESSION['usuario_nome'] ?? null;
-$nomeExibicao = $usuario ?? "Visitante";
-$logado = (bool)$usuario;
-?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -84,30 +72,30 @@ $logado = (bool)$usuario;
 
         <!-- IMAGEM DO PRODUTO -->
         <div class="col-md-5 text-center">
-            <img src="IMG/Benegrip.png" alt="Nome do Produto" class="produto-img">
+            <img src="img/protetorsolar.png" alt="Nome do Produto" class="produto-img">
         </div>
 
         <!-- INFORMAÇÕES DO PRODUTO -->
         <div class="col-md-7">
-            <h2>Benegrip Multi Solução Oral Sabor Frutas Vermelhas 240ml</h2>
+            <h2>Protetor Solar Infantil FPS 70</h2>
 
-            <p class="preco">R$ 35,24</p>
+            <p class="preco">R$ 47,94</p>
 
             <p>
-                Benegrip Multi alivia dor, febre e congestão nasal em um só produto, tratando os sintomas da gripe. Sua fórmula exclusiva permite doses ajustáveis para crianças a partir de 2 anos.
+             O Needs Kids FPS 70 é um protetor solar infantil em formato de bastão, sem cor, fácil e prático de aplicar.
             </p>
 
             <ul>
-                <li>Marca: Benegrip</li>
-                <li>Categoria: Antigripais</li>
+                <li>Marca: Needs Solar</li>
+                <li>Não possui cor.</li>
                 <li>Disponível na loja e para entrega</li>
             </ul>
 
                 <button class="add-carrinho"
                 data-id="1"
-                data-name="Benegripe"
-                data-preco="35.24"
-                data-img="IMG/Benegrip.png">
+                data-name="Protetor Solar Infantil"
+                data-preco="47.94"
+                data-img="IMG/protetorsolar.png">
                 Adicionar ao carrinho
                 </button>
         </div>
